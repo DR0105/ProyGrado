@@ -1,0 +1,36 @@
+<div class="card text-center">
+  <span class="h3">Consultar paciente</span>
+  <div>
+    <button class="m-auto" mat-button routerLink="../" [ngStyle]="{color: 'var(--azul-claro)'}">
+      <mat-icon>keyboard_backspace</mat-icon> Volver
+    </button>
+    <form [formGroup]="miFormulario">
+      <mat-form-field>
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código estudiante" type="text" formControlName="codigo">
+      </mat-form-field>
+      <button mat-icon-button color="primary" (click)="buscarPaciente()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Código</th>
+        <th scope="col">Carrera</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Historia Clínica</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{nombre}}</td>
+      <td>{{codigo}}</td>
+      <td>{{carrera}}</td>
+    </tbody>
+  </table>
+</div>

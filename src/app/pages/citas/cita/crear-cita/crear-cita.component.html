@@ -1,0 +1,100 @@
+<div class="container pt-4">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="card text-center">
+          <div class="card-body">
+            <h3>
+              {{ titulo }}
+              <!-- <div *ngIf="loading" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div> -->
+            </h3>
+            <span *ngIf="submit && crearCita.invalid" class="badge rounded-pill bg-danger">*TODOS LOS CAMPOS SON
+              OBLIGATORIOS*</span>
+            <form class="mt-4 row g-3" [formGroup]="crearCita" (ngSubmit)="agregarCita()">
+              <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+                <mat-form-field>
+                  <mat-label>Código</mat-label>
+                  <input matInput placeholder="Código estudiante" type="text" formControlName="codigo">
+                  <button mat-icon-button color="primary" (click)="buscarPaciente()">
+                    <mat-icon>search</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+                <mat-form-field appearance="outline" class="select-group">
+                    <mat-label>Paciente</mat-label>
+                    <input matInput [value]="nombre" formControlName="nombre">
+                    <mat-hint>Seleccione el tipo de cita</mat-hint>
+                    <mat-error>Campo obligatorio jeje</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="select-group">
+                    <mat-label>Facultad</mat-label>
+                    <mat-select formControlName="facultad">
+                        <mat-option [value]="usuario.facultad" *ngFor="let usuario of usuarios">
+                            {{usuario.facultad}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-hint>Seleccione la facultad</mat-hint>
+                    <mat-error>Campo obligatorio</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+              <mat-form-field appearance="outline" class="select-group">
+                  <mat-label>Tipo de cita</mat-label>
+                  <mat-select formControlName="tipocita">
+                      <mat-option [value]="tipocita.nombre" *ngFor="let tipocita of tipocitas">{{tipocita.nombre}}
+                      </mat-option>
+                  </mat-select>
+                  <mat-hint>Seleccione el tipo de cita</mat-hint>
+                  <mat-error>Campo obligatorio</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="select-group">
+                  <mat-label>Especialista</mat-label>
+                  <mat-select formControlName="especialista">
+                      <mat-option [value]="empleado.nombre1 +' '+ empleado.apellido1" *ngFor="let empleado of empleados">
+                          {{empleado.nombre1 + ' ' + empleado.apellido1}}
+                      </mat-option>
+                  </mat-select>
+                  <mat-hint>Seleccione el especialista</mat-hint>
+                  <mat-error>Campo obligatorio</mat-error>
+              </mat-form-field>
+          </div>
+  
+            <div class="form-group" fxLayoutAlign="space-between" fxLayout="row wrap">
+              <mat-form-field appearance="outline">
+                <mat-label>Fecha de la cita</mat-label>
+                <input matInput formControlName="fecha"[matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-hint>Ingresa la fecha de la cita</mat-hint>
+               <mat-error>La fecha es obligatoria</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Hora cita</mat-label>
+                <input id="timePicker" matInput [ngxTimepicker]="hora" [format]="24" formControlName="hora"
+                    min="08:00 am" max="04:45 pm" [disableClick]="false"/>
+                <mat-icon class="toggle-picker" matSuffix (click)="hora.open()">schedule</mat-icon>
+                <ngx-material-timepicker [hoursOnly]="false" #hora [editableHintTmpl]="hint" #with5Gap [minutesGap]="15">
+                    
+                </ngx-material-timepicker>
+                <ng-template #hint>
+                    <span class="time-hint">Ingrese la hora en formato 24 horas</span>
+                </ng-template>
+            </mat-form-field>
+             </div>
+             <mat-card-actions class="form-action mt-4" fxLayoutAlign="center" fxLayout.lt-sm="column">
+              <button class="card-button m-2" type="button" mat-raised-button routerLink="../listarCitas">
+                <mat-icon>arrow_back</mat-icon>Regresar
+              </button>
+              <button class="card-button m-2" type="submit" mat-raised-button [disabled]="!crearCita.valid">
+                <mat-icon>save</mat-icon> Guardar 
+              </button>
+              <!-- <mat-spinner *ngIf="crearCita.invalid"></mat-spinner> -->
+            </mat-card-actions>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

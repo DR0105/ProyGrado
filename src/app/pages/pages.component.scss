@@ -1,0 +1,21 @@
+@import '../@theme/styles/themes';
+:host {
+
+  background: nb-theme(slide-out-background);
+}
+@include nb-install-component() {
+  ::ng-deep router-outlet + * {
+    display: block;
+    animation: fade 1s;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
