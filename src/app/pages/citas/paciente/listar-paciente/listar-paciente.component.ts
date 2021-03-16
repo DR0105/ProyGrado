@@ -13,6 +13,7 @@ export class ListarPacienteComponent implements OnInit {
   nombre = '';
   carrera = '';
   codigo = '';
+  estado = '';
 
 
   constructor(private estudianteService: EstudiantesService) { }
@@ -26,6 +27,7 @@ export class ListarPacienteComponent implements OnInit {
         var paciente = data.datosEstudianteCollection.datosBasicosEstudiante[0];
         this.nombre = paciente.nombre;
         this.codigo = paciente.codigo;
+        this.estado = paciente.estado;
         this.estudianteService.getProyecto(paciente.carrera)
           .subscribe((data: any) => {
             this.carrera = data.carrerasCollection.carrera[0].nombre;

@@ -8,6 +8,7 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 const routes: Routes = [
   {
@@ -54,7 +55,7 @@ const config: ExtraOptions = {
 };
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forRoot(routes, config), NgxMaterialTimepickerModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {

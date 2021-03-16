@@ -15,6 +15,7 @@ import { HomeModule } from './home/home.module';
 import { ApoyoAlimentarioComponent } from './apoyo-alimentario/apoyo-alimentario.component';
 import { ApoyoAlimentarioModule } from './apoyo-alimentario/apoyo-alimentario.module';
 import { MatFormFieldModule } from '@angular/material';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MatFormFieldModule } from '@angular/material';
     RevisionInscModule,
     MiscellaneousModule,
     NbSpinnerModule,
+    NgxMaterialTimepickerModule,
   ],
   declarations: [
     PagesComponent,

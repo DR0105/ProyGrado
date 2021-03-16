@@ -5,6 +5,7 @@ import { CrearCitaComponent } from './cita/crear-cita/crear-cita.component';
 import { HorariosComponent } from './especialista/horarios/horarios.component';
 import { ListarPacienteComponent } from './paciente/listar-paciente/listar-paciente.component';
 import { HomeComponent } from './home/home.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 
 const routes: Routes = [
@@ -34,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), NgxMaterialTimepickerModule],
   exports: [RouterModule]
 })
 export class CitasRoutingModule { }

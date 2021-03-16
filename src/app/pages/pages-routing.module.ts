@@ -8,6 +8,7 @@ import {RevisionInscComponent} from './revision-insc/revision-insc.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ApoyoAlimentarioComponent } from './apoyo-alimentario/apoyo-alimentario.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 const routes: Routes = [
     {
@@ -56,7 +57,8 @@ const routes: Routes = [
 }];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(routes),
+    NgxMaterialTimepickerModule],
     exports: [RouterModule],
 })
 export class PagesRoutingModule {
