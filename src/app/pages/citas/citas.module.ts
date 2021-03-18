@@ -15,10 +15,11 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { RadioSelectGenericoModule } from '../../shared/components/radio-select-generico/radio-select-generico.module';
 import { ComboGenericoModule } from '../../shared/components/combo-generico/combo-generico.module';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { HistoriaClinicaComponent } from './historia-clinica/historia-clinica.component';
 
 
 @NgModule({
-  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent],
+  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent, HistoriaClinicaComponent],
   imports: [
     CommonModule,
     CitasRoutingModule,
