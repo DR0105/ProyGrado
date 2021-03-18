@@ -40,7 +40,10 @@
       <td>{{ carrera }}</td>
       <td>{{ telefono }}</td>
       <td>
-        <button mat-icon-button color="primary" (click)="buscarPaciente()">
+        <button
+          mat-icon-button
+          color="primary"
+          [routerLink]="['/pages/citas/historiaClinica/', codigo]">
           <mat-icon>assignment_ind</mat-icon>
         </button>
       </td>

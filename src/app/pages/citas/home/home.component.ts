@@ -31,4 +31,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/pages/citas/listarPaciente']);
     return false;
   }
+  navigateHistoriaClinica(){
+    this.router.navigate(['/pages/citas/historiaClinica']);
+    return false;
+  }
 }
