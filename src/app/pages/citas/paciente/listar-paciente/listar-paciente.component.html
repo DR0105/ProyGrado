@@ -7,12 +7,7 @@
     <form [formGroup]="miFormulario">
       <mat-form-field>
         <mat-label>Código</mat-label>
-        <input
-          matInput
-          placeholder="Código estudiante"
-          type="text"
-          formControlName="codigo"
-        />
+        <input matInput placeholder="Código estudiante" type="text" formControlName="codigo" />
       </mat-form-field>
       <button mat-icon-button color="primary" (click)="buscarPaciente()">
         <mat-icon>search</mat-icon>
@@ -22,34 +17,31 @@
 </div>
 <hr />
 <div class="card">
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Estado</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Código</th>
-        <th scope="col">Carrera</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">Historia Clínica</th>
-      </tr>
-    </thead>
-    <tbody *ngIf="nombre.length > 1">
-      <td>{{ estado }}</td>
-      <td>{{ nombre }}</td>
-      <td>{{ codigo }}</td>
-      <td>{{ carrera }}</td>
-      <td>{{ telefono }}</td>
-      <td>
-        <button
-          mat-icon-button
-          color="primary"
-          [routerLink]="['/pages/citas/historiaClinica/', codigo]">
-          <mat-icon>assignment_ind</mat-icon> Historia Clínica
-        </button>
-      </td>
-      <td></td>
-    </tbody>
-  </table>
-</div>
+  <div class="container">
+    <table class="table table-striped" *ngIf="nombre.length > 1">
+      <thead>
+        <tr>
+          <th scope="col">Estado</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Código</th>
+          <th scope="col">Carrera</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Historia Clínica</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>{{ estado }}</td>
+        <td>{{ nombre }}</td>
+        <td>{{ codigo }}</td>
+        <td>{{ carrera }}</td>
+        <td>{{ telefono }}</td>
+        <td>
+          <button mat-icon-button color="primary" [routerLink]="['/pages/citas/historiaClinica/', codigo]">
+            <mat-icon>assignment_ind</mat-icon> Historia Clínica
+          </button>
+        </td>
+        <td></td>
+      </tbody>
+    </table>
+  </div>
 </div>
