@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class HistoriaClinicaComponent implements OnInit {
-
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit() {
