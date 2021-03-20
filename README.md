@@ -1,13 +1,10 @@
-# presupuesto_cliente
-Cliente para el **subsistema de Presupuesto** del *Sistema de Gestión Financiera KRONOS*.
+# SIBUD - CITAS E HISTORIA CLÍNICA
 
- Permite centralizar y gestionar el manejo de la información de la Universidad Distrital por medio de diferentes subsistemas, puntualmente se gestionan los siguientes procesos:
- - Preasignación de presupuesto inicial
- - Modificaciones presupuestales,
- - Gestión de las fuentes de financiamiento,
- - Gestión de los certificados de disponibilidad presupuestal
- - Gestión de los certificados de registro presupuestal,
- - Gestión de las vigencias y los reportes financieros
+ Permite centralizar y gestionar el manejo de la información de salud en la Universidad Distrital por medio de diferentes subsistemas, puntualmente se gestionan los siguientes procesos:
+ - Agendamiento de historias clínicas
+ - Consulta de pacientes
+ - Gestión de Historias Clínicas
+ 
 
 ## Especificaciones Técnicas
 
@@ -29,9 +26,9 @@ AWS_SECRET_ACCESS_KEY: Secreto de Usuario AWS
 Clonar el proyecto del repositorio de git
 ```bash
 # clone the project
-git clone https://github.com/udistrital/presupuesto_cliente.git
+git clone https://github.com/DR0105/ProyGrado.git
 # enter the project directory
-cd presupuesto_cliente
+cd ProyGrado
 ```
 Iniciar el servidor en local
 ```bash
@@ -41,6 +38,8 @@ or
 npm install
 # start server
 npx ng serve
+or
+ng serve -o
 # Whenever you want to change the port just run
 npx ng dev --port = 9528
 ```
