@@ -7,9 +7,136 @@
   </div>
 </div>
 <div class="card text-center">
-  <h6>Datos Básicos</h6>
+  <h6 class="mt-2">Datos Básicos</h6>
+  <hr>
+  <div class="row">
+    <div class="col md-3">
+      <strong>Nombre: </strong> Benito Suárez
+    </div>
+    <div class="col md-3">
+      <strong>Código: </strong>20191019019
+    </div>
+    <div class="col md-3">
+      <strong>Documento: </strong>20191019019
+    </div>
+    <div class="col md-3">
+      <strong>EPS: </strong>Famisanar
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col md-6">
+      <strong>Fecha de nacimiento: </strong> {{'12/16/20' | date :'dd-MMMM-yyyy': '': 'es-CO'}}
+
+    </div>
+    <div class="col md-6">
+      <strong>Lugar de Nacimiento: </strong>Bogotá
+    </div>
+    <div class="col md-4">
+      <strong>Edad: </strong>19
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col md-4">
+      <strong>Vinculación: </strong>
+      <br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="estudiante" id="estudiante" value="Estudiante">
+        <label class="form-check-label">Estudiante</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="funcionario" id="funcionario" value="Funcionario">
+        <label class="form-check-label">Funcionario</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="docente" id="docente" value="Docente">
+        <label class="form-check-label">Docente</label>
+      </div>
+    </div>
+    <div class="col md-4">
+      <strong>Tipo: </strong>
+      <br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="especial" id="escpecial" value="Especial">
+        <label class="form-check-label">Especial</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="otro" id="otro" value="Otro">
+        <label class="form-check-label">Otro</label>
+      </div>
+    </div>
+    <div class="col md-4">
+      <strong>¿Cuál? </strong>
+      <br>
+      xxxxxxxx
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col md-6">
+      <strong>Facultad: </strong> Ingeniería
+
+    </div>
+    <div class="col md-6">
+      <strong>Proyecto curricular: </strong>Ingeniería de sistemas
+    </div>
+    <div class="col md-4">
+      <strong>Dependencia: </strong>
+    </div>
+    <div class="col md-4">
+      <strong>Procedente de: </strong>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col md-6">
+      <strong>Dirección: </strong> Calle falsa 123
+    </div>
+    <div class="col md-6">
+      <strong>Teléfono: </strong> 2021202
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-3">
+    <div class="col md-6">
+      <strong>Contacto de emergencia: </strong> Benita Suárez
+    </div>
+    <div class="col md-6">
+      <strong>Parentesco: </strong> Madre
+    </div>
+  </div>
+  <div class="row mt-3 mb-3">
+    <div class="col md-6">
+      <strong>Dirección: </strong> Calle falsa 123
+    </div>
+    <div class="col md-6">
+      <strong>Teléfono: </strong> 2021202
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-2">
+    <div class="col md-6">
+      <strong>Situación Académica: </strong>
+      <br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="pruebaAcademica" id="pruebaAcademica"
+          value="Prueba Académica">
+        <label class="form-check-label">Prueba Académica</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="activo" id="activo" value="Activo">
+        <label class="form-check-label">Activo</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="otro" id="otro" value="Otro">
+        <label class="form-check-label">Otro</label>
+      </div>
+    </div>
+    <div class="col md-6">
+      <strong>¿Cuál?</strong>
+      <br>
+      xxxxxxxx
+    </div>
+  </div>
 </div>
-<div class="card">
+<div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -26,7 +153,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
-<div class="card">
+<div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -43,7 +170,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
-<div class="card">
+<div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>

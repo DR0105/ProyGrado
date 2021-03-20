@@ -6,7 +6,7 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -77,6 +77,9 @@ import { CdkTreeModule } from '@angular/cdk/tree';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import LocaleEs from "@angular/common/locales/es-CO";
+import { registerLocaleData } from "@angular/common";
+registerLocaleData(LocaleEs);
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -133,9 +136,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatTreeModule,
   ],
   imports: [BrowserAnimationsModule,
-  NgxMaterialTimepickerModule],
+    NgxMaterialTimepickerModule],
 })
-export class MaterialModule {}
+export class MaterialModule { }
 
 @NgModule({
   declarations: [AppComponent],
@@ -171,6 +174,7 @@ export class MaterialModule {}
   bootstrap: [AppComponent],
   providers: [ImplicitAutenticationService,
     { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LOCALE_ID, useValue: 'es-CO' }
   ],
 })
 export class AppModule {
