@@ -1,3 +1,4 @@
+<!-- Titulo -->
 <div class="card text-center">
   <span class="h3">Historia Clínica</span>
   <div>
@@ -6,140 +7,145 @@
     </button>
   </div>
 </div>
+<!-- DatosBásicos -->
 <mat-card>
-  <h6 class="titulo">Datos Básicos</h6>
-  <hr>
-  <div class="row">
-    <div class="col-sm md-3">
-      <strong>Nombre: </strong> Benito Suárez
+  <form [formGroup]="datosBasicos">
+    <h5 class="titulo">Datos Básicos</h5>
+    <hr>
+    <div class="row">
+      <div class="col md-3">
+        <strong>Nombre: </strong> {{prueba.nombre}}
+      </div>
+      <div class="col md-3">
+        <strong>Código: </strong>{{prueba.codigo}}
+      </div>
+      <div class="col md-3">
+        <strong>Documento: </strong>{{prueba.documento}}
+      </div>
+      <div class="col md-3">
+        <strong>EPS: </strong>{{prueba.eps}}
+      </div>
     </div>
-    <div class="col md-3">
-      <strong>Código: </strong>20191019019
-    </div>
-    <div class="col md-3">
-      <strong>Documento: </strong>20191019019
-    </div>
-    <div class="col md-3">
-      <strong>EPS: </strong>Famisanar
-    </div>
-  </div>
-  <hr>
-  <div class="row mt-2">
-    <div class="col md-6">
-      <strong>Fecha de nacimiento: </strong> {{'12/16/20' | date :'dd-MMMM-yyyy': '': 'es-CO'}}
+    <hr>
+    <div class="row mt-2">
+      <div class="col md-6">
+        <strong>Fecha de nacimiento: </strong> {{prueba.fechaDeNacimiento | date :'dd-MMMM-yyyy': '': 'es-CO'}}
 
-    </div>
-    <div class="col md-6">
-      <strong>Lugar de Nacimiento: </strong>Bogotá
-    </div>
-    <div class="col md-4">
-      <strong>Edad: </strong>19
-    </div>
-  </div>
-  <hr>
-  <div class="row mt-2">
-    <div class="col md-4">
-      <strong>Vinculación: </strong>
-      <br>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="estudiante" id="estudiante" value="Estudiante">
-        <label class="form-check-label">Estudiante</label>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="funcionario" id="funcionario" value="Funcionario">
-        <label class="form-check-label">Funcionario</label>
+      <div class="col md-6">
+        <strong>Lugar de Nacimiento: </strong>{{prueba.lugarDeNacimiento}}
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="docente" id="docente" value="Docente">
-        <label class="form-check-label">Docente</label>
+      <div class="col md-4">
+        <strong>Edad: </strong>{{prueba.edad}}
       </div>
     </div>
-    <div class="col md-4">
-      <strong>Tipo: </strong>
-      <br>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="especial" id="escpecial" value="Especial">
-        <label class="form-check-label">Especial</label>
+    <hr>
+    <div class="row mt-2">
+      <div class="col md-4">
+        <strong>Vinculación: </strong>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="vinculacion" id="estudiante" value="Estudiante">
+          <label class="form-check-label" for="estudiante">Estudiante</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="vinculacion" id="funcionario"
+            value="Funcionario">
+          <label class="form-check-label" for="funcionario">Funcionario</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="vinculacion" id="docente" value="Docente">
+          <label class="form-check-label" for="docente">Docente</label>
+        </div>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="otro" id="otro" value="Otro">
-        <label class="form-check-label">Otro</label>
+      <div class="col md-4" *ngIf="prueba.vinculacion !== 'Estudiante'">
+        <strong>Tipo: </strong>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="tipo" id="escpecial" value="Especial">
+          <label class="form-check-label">Especial</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="tipo" id="otro" value="Otro">
+          <label class="form-check-label">Otro</label>
+        </div>
+      </div>
+      <div class="col md-4" *ngIf="prueba.tipo === 'Otro'">
+        <strong>¿Cuál? </strong>
+        <br>
+        {{prueba.cualTipo}}
       </div>
     </div>
-    <div class="col md-4">
-      <strong>¿Cuál? </strong>
-      <br>
-      xxxxxxxx
-    </div>
-  </div>
-  <hr>
-  <div class="row mt-2">
-    <div class="col md-6">
-      <strong>Facultad: </strong> Ingeniería
+    <hr>
+    <div class="row mt-2">
+      <div class="col md-6">
+        <strong>Facultad: </strong> {{prueba.facultad}}
 
-    </div>
-    <div class="col md-6">
-      <strong>Proyecto curricular: </strong>Ingeniería de sistemas
-    </div>
-    <div class="col md-4">
-      <strong>Dependencia: </strong>
-    </div>
-    <div class="col md-4">
-      <strong>Procedente de: </strong>
-    </div>
-  </div>
-  <hr>
-  <div class="row mt-2">
-    <div class="col md-6">
-      <strong>Dirección: </strong> Calle falsa 123
-    </div>
-    <div class="col md-6">
-      <strong>Teléfono: </strong> 2021202
-    </div>
-  </div>
-  <hr>
-  <div class="row mt-2">
-    <div class="flex-column col float-right md-6">
-      <strong>Contacto de emergencia: </strong> Benita Suárez
-    </div>
-    <div class="col md-6">
-      <strong>Parentesco: </strong> Madre
-    </div>
-  </div>
-  <div class="row mt-3 mb-4">
-    <div class="col md-6">
-      <strong>Dirección: </strong> Calle falsa 123
-    </div>
-    <div class="col md-6">
-      <strong>Teléfono: </strong> 2021202
-    </div>
-  </div>
-  <hr>
-  <div class="row mt-2">
-    <div class="col md-6">
-      <strong>Situación Académica: </strong>
-      <br>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="pruebaAcademica" id="pruebaAcademica"
-          value="Prueba Académica">
-        <label class="form-check-label">Prueba Académica</label>
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="activo" id="activo" value="Activo">
-        <label class="form-check-label">Activo</label>
+      <div class="col md-6">
+        <strong>Proyecto curricular: </strong>{{prueba.carrera}}
       </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="otro" id="otro" value="Otro">
-        <label class="form-check-label">Otro</label>
+      <div class="col md-4" *ngIf="prueba.dependencia !==null">
+        <strong>Dependencia: </strong>
+      </div>
+      <div class="col md-4" *ngIf="prueba.procedenteDe !==null">
+        <strong>Procedente de: </strong>
       </div>
     </div>
-    <div class="col md-6">
-      <strong>¿Cuál?</strong>
-      <br>
-      xxxxxxxx
+    <hr>
+    <div class="row mt-2">
+      <div class="col md-6">
+        <strong>Dirección: </strong> {{prueba.direccion}}
+      </div>
+      <div class="col md-6">
+        <strong>Teléfono: </strong> {{prueba.telefono}}
+      </div>
     </div>
-  </div>
+    <hr>
+    <div class="row mt-2">
+      <div class="flex-column col float-right md-6">
+        <strong>Contacto de emergencia: </strong> {{prueba.contactoEmergencia}}
+      </div>
+      <div class="col md-6">
+        <strong>Parentesco: </strong> {{prueba.parentesco}}
+      </div>
+    </div>
+    <div class="row mt-3 mb-4">
+      <div class="col md-6">
+        <strong>Dirección: </strong> {{prueba.direccionContacto}}
+      </div>
+      <div class="col md-6">
+        <strong>Teléfono: </strong> {{prueba.telefonoContacto}}
+      </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+      <div class="col md-6">
+        <strong>Situación Académica: </strong>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="prueba"
+            value="Prueba Académica">
+          <label class="form-check-label" for="prueba">Prueba Académica</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="activo" value="Activo">
+          <label class="form-check-label" for="activo">Activo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="otra" value="Otro">
+          <label class="form-check-label" for="otra">Otro</label>
+        </div>
+      </div>
+      <div class="col md-6">
+        <strong>¿Cuál?</strong>
+        <br>
+        {{prueba.cualSituacion}}
+      </div>
+    </div>
+  </form>
 </mat-card>
+<!-- Medicina General -->
 <div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
@@ -151,22 +157,22 @@
           Aspectos básicos de medicina
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <h6 class="titulo">Medicina General </h6>
+      <h5 class="titulo">Medicina General </h5>
       <hr>
       <div class="row">
-        <div class="col md-10">
+        <div class="col md-12 me-4">
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Motivo de consulta y enfermedad actual" id="floatingTextarea2"
-              style="height: 90px"></textarea>
-            <label for="floatingTextarea2">Motivo de consulta y enfermedad actual</label>
+            <textarea class="form-control textos"placeholder="Motivo de consulta y enfermedad actual" id="floatingTextarea2"></textarea>
+            <label for="floatingTextarea2"><strong> Motivo de consulta y enfermedad actual</strong></label>
           </div>
-
+          <hr>
+          <h6 class="titulo">Antecedentes</h6>
         </div>
-
       </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+<!-- Fisioterapia -->
 <div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
@@ -184,6 +190,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+<!-- Odontología -->
 <div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
@@ -201,6 +208,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+<!-- Psicología -->
 <div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
