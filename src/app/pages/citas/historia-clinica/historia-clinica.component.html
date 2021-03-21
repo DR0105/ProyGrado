@@ -6,11 +6,11 @@
     </button>
   </div>
 </div>
-<div class="card text-center">
-  <h6 class="mt-2">Datos Básicos</h6>
+<mat-card>
+  <h6 class="titulo">Datos Básicos</h6>
   <hr>
   <div class="row">
-    <div class="col md-3">
+    <div class="col-sm md-3">
       <strong>Nombre: </strong> Benito Suárez
     </div>
     <div class="col md-3">
@@ -23,7 +23,8 @@
       <strong>EPS: </strong>Famisanar
     </div>
   </div>
-  <div class="row mt-3">
+  <hr>
+  <div class="row mt-2">
     <div class="col md-6">
       <strong>Fecha de nacimiento: </strong> {{'12/16/20' | date :'dd-MMMM-yyyy': '': 'es-CO'}}
 
@@ -35,7 +36,8 @@
       <strong>Edad: </strong>19
     </div>
   </div>
-  <div class="row mt-3">
+  <hr>
+  <div class="row mt-2">
     <div class="col md-4">
       <strong>Vinculación: </strong>
       <br>
@@ -70,7 +72,8 @@
       xxxxxxxx
     </div>
   </div>
-  <div class="row mt-3">
+  <hr>
+  <div class="row mt-2">
     <div class="col md-6">
       <strong>Facultad: </strong> Ingeniería
 
@@ -85,7 +88,8 @@
       <strong>Procedente de: </strong>
     </div>
   </div>
-  <div class="row mt-3">
+  <hr>
+  <div class="row mt-2">
     <div class="col md-6">
       <strong>Dirección: </strong> Calle falsa 123
     </div>
@@ -94,15 +98,15 @@
     </div>
   </div>
   <hr>
-  <div class="row mt-3">
-    <div class="col md-6">
+  <div class="row mt-2">
+    <div class="flex-column col float-right md-6">
       <strong>Contacto de emergencia: </strong> Benita Suárez
     </div>
     <div class="col md-6">
       <strong>Parentesco: </strong> Madre
     </div>
   </div>
-  <div class="row mt-3 mb-3">
+  <div class="row mt-3 mb-4">
     <div class="col md-6">
       <strong>Dirección: </strong> Calle falsa 123
     </div>
@@ -135,21 +139,24 @@
       xxxxxxxx
     </div>
   </div>
-</div>
+</mat-card>
 <div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Medicina
+          <strong>Medicina</strong>
         </mat-panel-title>
         <mat-panel-description>
           Aspectos básicos de medicina
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates suscipit consequatur, nisi non deleniti
-        possimus quo, sit ullam placeat magnam provident sunt impedit officiis quibusdam laudantium ea doloremque
-        necessitatibus et!</p>
+      <h6 class="titulo">Medicina General</h6>
+      <hr>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Motivo de la consulta" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Motivo de la consulta</label>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
@@ -158,7 +165,7 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Fisioterpia
+          <strong>Fisioterapia</strong>
         </mat-panel-title>
         <mat-panel-description>
           Aspectos básicos fisioterapia
@@ -175,7 +182,7 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Odontología
+          <strong>Odontología</strong>
         </mat-panel-title>
         <mat-panel-description>
           Aspectos básicos odontología
@@ -187,12 +194,12 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
-<div class="card">
+<div class="card mt-2">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Psicología
+          <strong>Psicología</strong>
         </mat-panel-title>
         <mat-panel-description>
           Aspectos básicos psicología

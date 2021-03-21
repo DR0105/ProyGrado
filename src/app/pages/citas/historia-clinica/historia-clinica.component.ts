@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ngx-historia-clinica',
   templateUrl: './historia-clinica.component.html',
-  styles: []
+  styleUrls: ['./historia-clinica.component.css']
 })
 export class HistoriaClinicaComponent implements OnInit {
   panelOpenState = false;
