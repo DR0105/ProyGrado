@@ -159,16 +159,141 @@
       </mat-expansion-panel-header>
       <h5 class="titulo">Medicina General </h5>
       <hr>
-      <div class="row">
-        <div class="col md-12 me-4">
-          <div class="form-floating">
-            <textarea class="form-control textos"placeholder="Motivo de consulta y enfermedad actual" id="floatingTextarea2"></textarea>
-            <label for="floatingTextarea2"><strong> Motivo de consulta y enfermedad actual</strong></label>
+      <form [formGroup]="medicinaForm">
+        <div class="row">
+          <div class="col md-12 me-4">
+            <div class="form-floating">
+              <textarea class="form-control .textArea-big" formControlName="motivoConsulta"
+                placeholder="Motivo de consulta y enfermedad actual" id="motivo"></textarea>
+              <label for="motivo"><strong> Motivo de consulta y enfermedad actual</strong></label>
+            </div>
           </div>
+          <!-- Antecedentes -->
+          <h6 class="titulo mt-2">Antecedentes</h6>
           <hr>
-          <h6 class="titulo">Antecedentes</h6>
+          <div class="col md-6 me-4">
+            <div class="form-floating">
+              <textarea class="form-control .textArea-mid" formControlName="patologicos" placeholder="Patológicos"
+                id="patologicos"></textarea>
+              <label for="patologicos"><strong> Patológicos</strong></label>
+            </div>
+          </div>
+          <div class="col md-6 me-4">
+            <div class="form-floating">
+              <textarea class="form-control .textArea-mid" formControlName="hospitalarios" placeholder="hospitalarios"
+                id="hospitalarios"></textarea>
+              <label for="hospitalarios"><strong> Hospitalarios</strong></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="quirurgicos" placeholder="Quirúrgicos"
+                  id="quirurgicos"></textarea>
+                <label for="quirurgicos"><strong> Quirúrgicos</strong></label>
+              </div>
+            </div>
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="traumaticos" placeholder="Traumáticos"
+                  id="traumaticos"></textarea>
+                <label for="traumaticos"><strong> Traumáticos</strong></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="genitoUrinarios"
+                  placeholder="Genito/Urinarios" id="genitoUrinarios"></textarea>
+                <label for="genitoUrinarios"><strong>Genito/Urinarios</strong></label>
+              </div>
+            </div>
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="alergicos" placeholder="Alérgicos"
+                  id="alergicos"></textarea>
+                <label for="alergicos"><strong> Alérgicos</strong></label>
+              </div>
+            </div>
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="farmacologicos"
+                  placeholder="Farmacológicos" id="farmacologicos"></textarea>
+                <label for="farmacologicos"><strong> Farmacológicos</strong></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="familiares" placeholder="Familiares"
+                  id="familiares"></textarea>
+                <label for="familiares"><strong> Familiares</strong></label>
+              </div>
+            </div>
+            <div class="col md-6 me-4 mt-2">
+              <div class="form-floating">
+                <textarea class="form-control .textArea-mid" formControlName="ocupacionales" placeholder="Ocupacionales"
+                  id="ocupacionales"></textarea>
+                <label for="ocupacionales"><strong> Ocupacionales</strong></label>
+              </div>
+            </div>
+          </div>
+          <h6 class="titulo mt-2">Gineco-Obstétricos</h6>
+          <div class="row">
+            <div class="col md-3 mb-3 me-4 mt-2">
+              <label for="menarquia" class="form-label">Menarquía</label>
+              <input type="text" class="form-control" id="menarquia" formControlName="menarquia">
+            </div>
+            <div class="col md-3 mb-3 me-4 mt-2">
+              <label for="fur" class="form-label">FUR</label>
+              <input type="text" class="form-control" id="fur" formControlName="fur">
+            </div>
+            <div class="col md-3 mb-3 me-4 mt-2">
+              <label for="ciclos" class="form-label">Ciclos</label>
+              <input type="text" class="form-control" id="ciclos" formControlName="ciclos">
+            </div>
+            <div class="col md-3 mb-3 me-4 mt-2">
+              <label for="ias" class="form-label">Inicio A.S.</label>
+              <input type="text" class="form-control" id="ias" formControlName="ias">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col md-3 mb-3 me-4 mt-2">
+              <label for="compañeros" class="form-label">Compañeros Sexuales</label>
+              <input type="text" class="form-control" id="compañeros" formControlName="compañeros">
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="fo" class="form-label">FO:G</label>
+              <input type="text" class="form-control" id="fo" formControlName="fo">
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="pp" class="form-label">PP</label>
+              <input type="text" class="form-control" id="pp" formControlName="pp">
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="fup" class="form-label">FUP</label>
+              <input type="text" class="form-control" id="fup" formControlName="fup">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="fuccv" class="form-label">Fecha Última CCV</label>
+              <input type="text" class="form-control" id="fuccv" formControlName="fuccv">
+              <label for="resultadoccv" class="form-label">Resultado</label>
+              <input type="text" class="form-control" id="resultadoccv" formControlName="resultadoccv">
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="examenSeno" class="form-label">Examen de Seno</label>
+              <input type="text" class="form-control" id="examenSeno" formControlName="examenSeno">
+              <label for="resultadoSeno" class="form-label">Resultado</label>
+              <input type="text" class="form-control" id="resultadoSeno" formControlName="resultadoSeno">
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
