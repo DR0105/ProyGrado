@@ -17,6 +17,7 @@ export class HistoriaClinicaComponent implements OnInit {
     situacionAcademica: ['', Validators.required],
   })
   nuevoAnalisis: FormControl = this.fb.control('', Validators.required);
+  nuevaEvolucion: FormControl = this.fb.control('', Validators.required);
   medicinaForm: FormGroup = this.fb.group({
     motivoConsulta: ['', Validators.required],
     patologicos: ['', Validators.required],
@@ -76,7 +77,9 @@ export class HistoriaClinicaComponent implements OnInit {
     id2: ['', Validators.required],
     id3: ['', Validators.required],
     id4: ['', Validators.required],
-    analisis: this.fb.array([])
+    analisis: this.fb.array([]),
+    evolucion: this.fb.array([]),
+    planDeManejo:['',Validators.required],
   })
   model: NgbDateStruct;
   prueba = {
@@ -90,6 +93,9 @@ export class HistoriaClinicaComponent implements OnInit {
   get analisisArr() {
     return this.medicinaForm.get('analisis') as FormArray;
   }
+  get evolucionArr() {
+    return this.medicinaForm.get('evolucion') as FormArray;
+  }
   agregarAnalisis() {
     if (this.nuevoAnalisis.invalid) {
       return
@@ -97,7 +103,17 @@ export class HistoriaClinicaComponent implements OnInit {
     this.analisisArr.push(new FormControl(this.nuevoAnalisis.value, Validators.required));
     this.nuevoAnalisis.reset();
   }
+  agregarEvolucion() {
+    if (this.nuevaEvolucion.invalid) {
+      return
+    }
+    this.evolucionArr.push(new FormControl(this.nuevaEvolucion.value, Validators.required));
+    this.nuevaEvolucion.reset();
+  }
   borrarAnalisis(i: number) {
     this.analisisArr.removeAt(i);
+  }
+  borrarEvolucion(i: number) {
+    this.evolucionArr.removeAt(i);
   }
 }

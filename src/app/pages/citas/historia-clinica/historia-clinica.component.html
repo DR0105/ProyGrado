@@ -538,11 +538,36 @@
           <hr>
           <div class="row mt-2">
             <div class="col md-6 me-4 mb-4">
-
-              
+              <div class="input-group">
+                <input type="text" class="form-control" (keyup.enter)="agregarEvolucion()" name="nuevaEvolucion"
+                  placeholder="Agregar" [formControl]="nuevaEvolucion">
+                <button class="btn btn-outline-primary" type="button" (click)="agregarEvolucion()"> Agregar</button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col md-6 me-4 mb-4" formArrayName="evolucion">
+                <div class="input-group mb-1" *ngFor="let evolucion of evolucionArr.controls;let i=index">
+                  <input class=" form-control" *ngIf="evolucionArr.length>0" [formControlName]="i">
+                  <button class="btn btn-outline-danger" type="button" (click)="borrarEvolucion(i)"> Borrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h6 class="titulo">Plan de Manejo</h6>
+          <hr>
+          <div class="row mt-2">
+            <div class="col md-12 me-4">
+              <div class="form-floating">
+                <textarea class="form-control textArea-big" formControlName="planDeManejo" placeholder="Plan de Manejo"
+                  id="planDeManejo"></textarea>
+                <label for="planDeManejo"> Plan de Manejo</label>
+              </div>
             </div>
           </div>
         </div>
+        <button class="card-button m-2 mt-4 float-end" type="submit" mat-raised-button [disabled]="!medicinaForm.valid">
+          <mat-icon>save</mat-icon> Guardar
+        </button>
       </form>
     </mat-expansion-panel>
   </mat-accordion>
