@@ -10,7 +10,9 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 export class HistoriaClinicaComponent implements OnInit {
   panelOpenState = false;
   constructor(private fb: FormBuilder) { }
-
+  especialista = new FormGroup({
+    codigo: new FormControl(null, Validators.required),
+  });
   datosBasicos: FormGroup = this.fb.group({
     vinculacion: ['', Validators.required],
     tipo: ['', Validators.required],
@@ -79,7 +81,7 @@ export class HistoriaClinicaComponent implements OnInit {
     id4: ['', Validators.required],
     analisis: this.fb.array([]),
     evolucion: this.fb.array([]),
-    planDeManejo:['',Validators.required],
+    planDeManejo: ['', Validators.required],
   })
   model: NgbDateStruct;
   prueba = {
@@ -87,6 +89,10 @@ export class HistoriaClinicaComponent implements OnInit {
     lugarDeNacimiento: 'Bogotá', edad: 20, vinculacion: 'Docente', tipo: 'Otro', cualTipo: 'xxxxxx', dependencia: null, procedenteDe: null,
     facultad: 'Ingeniería', carrera: 'Ingeniería de Sistemas', direccion: 'Calle falsa 123', telefono: '2021202', contactoEmergencia: 'María Camelo',
     parentesco: 'Madre', direccionContacto: 'Calle falsa 123', telefonoContacto: '2021202', situacionAcademica: 'Otro', cualSituacion: 'xxxxxx'
+  }
+  pruebaEspecialista={
+    nombre:'NOMBRE1 APELLIDO1',
+    especialidad: 'ESPECIALIDAD 1',
   }
   ngOnInit() {
   }
@@ -115,5 +121,8 @@ export class HistoriaClinicaComponent implements OnInit {
   }
   borrarEvolucion(i: number) {
     this.evolucionArr.removeAt(i);
+  }
+  buscarEspecialista() {
+    // TODO
   }
 }
