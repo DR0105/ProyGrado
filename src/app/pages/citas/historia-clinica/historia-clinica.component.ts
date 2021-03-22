@@ -38,6 +38,22 @@ export class HistoriaClinicaComponent implements OnInit {
     resultadoccv: ['', Validators.required],
     examenSeno: ['', Validators.required],
     resultadoSeno: ['', Validators.required],
+    piel: ['', Validators.required],
+    colageno: ['', Validators.required],
+    linfatico: ['', Validators.required],
+    oseo: ['', Validators.required],
+    muscular: ['', Validators.required],
+    articular: ['', Validators.required],
+    digestivo: ['', Validators.required],
+    urinario: ['', Validators.required],
+    sentidos: ['', Validators.required],
+    cardioVascular: ['', Validators.required],
+    neurologico: ['', Validators.required],
+    respiratorio: ['', Validators.required],
+    examenes:['',Validators.required]
+
+
+
   })
   prueba = {
     nombre: 'Benito Suárez', codigo: 20212021021, documento: 2021202120, eps: 'Famisanar', fechaDeNacimiento: new Date(),
