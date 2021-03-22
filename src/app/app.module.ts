@@ -79,6 +79,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import LocaleEs from "@angular/common/locales/es-CO";
 import { registerLocaleData } from "@angular/common";
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+//import interactionPlugin from '@fullcalendar/interaction';
+FullCalendarModule.registerPlugins([ 
+  dayGridPlugin,
+  //interactionPlugin
+]);
 registerLocaleData(LocaleEs);
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -136,7 +143,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatTreeModule,
   ],
   imports: [BrowserAnimationsModule,
-    NgxMaterialTimepickerModule],
+    NgxMaterialTimepickerModule,
+    FullCalendarModule],
 })
 export class MaterialModule { }
 

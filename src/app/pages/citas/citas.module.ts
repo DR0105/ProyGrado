@@ -15,7 +15,18 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { RadioSelectGenericoModule } from '../../shared/components/radio-select-generico/radio-select-generico.module';
 import { ComboGenericoModule } from '../../shared/components/combo-generico/combo-generico.module';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
 import { HistoriaClinicaComponent } from './historia-clinica/historia-clinica.component';
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+  timeGridPlugin,
+  listPlugin,
+]);
 
 
 @NgModule({
@@ -43,6 +54,7 @@ import { HistoriaClinicaComponent } from './historia-clinica/historia-clinica.co
     NbAccordionModule,
     ComboGenericoModule,
     RadioSelectGenericoModule,
+    FullCalendarModule,
   ]
 })
 export class CitasModule { }
