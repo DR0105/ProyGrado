@@ -22,7 +22,7 @@ export class HorariosComponent implements OnInit {
       right: 'timeGridDay,timeGridWeek,dayGridMonth,listWeek'
     },
     locale: esLocale,
-    slotLabelFormat:{
+    slotLabelFormat: {
       hour: 'numeric',
       minute: '2-digit',
       omitZeroMinute: false,
@@ -30,7 +30,7 @@ export class HorariosComponent implements OnInit {
     },
     navLinks: true,
     editable: true,
-    slotMinTime: '06:00:00',
+    slotMinTime: '08:00:00',
     slotMaxTime: '16:00:00',
     slotDuration: '00:15:00',
     slotLabelInterval: 15,
