@@ -11,136 +11,130 @@
 <mat-card>
   <form [formGroup]="datosBasicos">
     <h5 class="titulo">Datos Básicos</h5>
-    <hr>
+    <hr />
     <div class="row">
+      <div class="col md-3"><strong>Nombre: </strong> {{ prueba.nombre }}</div>
+      <div class="col md-3"><strong>Código: </strong>{{ prueba.codigo }}</div>
       <div class="col md-3">
-        <strong>Nombre: </strong> {{prueba.nombre}}
+        <strong>Documento: </strong>{{ prueba.documento }}
       </div>
-      <div class="col md-3">
-        <strong>Código: </strong>{{prueba.codigo}}
-      </div>
-      <div class="col md-3">
-        <strong>Documento: </strong>{{prueba.documento}}
-      </div>
-      <div class="col md-3">
-        <strong>EPS: </strong>{{prueba.eps}}
-      </div>
+      <div class="col md-3"><strong>EPS: </strong>{{ prueba.eps }}</div>
     </div>
-    <hr>
+    <hr />
     <div class="row mt-2">
       <div class="col md-6">
-        <strong>Fecha de nacimiento: </strong> {{prueba.fechaDeNacimiento | date :'dd-MMMM-yyyy': '': 'es-CO'}}
-
+        <strong>Fecha de nacimiento: </strong>
+        {{ prueba.fechaDeNacimiento | date: "dd-MMMM-yyyy":"":"es-CO" }}
       </div>
       <div class="col md-6">
-        <strong>Lugar de Nacimiento: </strong>{{prueba.lugarDeNacimiento}}
+        <strong>Lugar de Nacimiento: </strong>{{ prueba.lugarDeNacimiento }}
       </div>
-      <div class="col md-4">
-        <strong>Edad: </strong>{{prueba.edad}}
-      </div>
+      <div class="col md-4"><strong>Edad: </strong>{{ prueba.edad }}</div>
     </div>
-    <hr>
+    <hr />
     <div class="row mt-2">
       <div class="col md-4">
         <strong>Vinculación: </strong>
-        <br>
+        <br />
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="vinculacion" id="estudiante" value="Estudiante">
+          <input class="form-check-input" type="radio" formControlName="vinculacion" id="estudiante"
+            value="Estudiante" />
           <label class="form-check-label" for="estudiante">Estudiante</label>
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" formControlName="vinculacion" id="funcionario"
-            value="Funcionario">
+            value="Funcionario" />
           <label class="form-check-label" for="funcionario">Funcionario</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="vinculacion" id="docente" value="Docente">
+          <input class="form-check-input" type="radio" formControlName="vinculacion" id="docente" value="Docente" />
           <label class="form-check-label" for="docente">Docente</label>
         </div>
       </div>
       <div class="col md-4" *ngIf="prueba.vinculacion !== 'Estudiante'">
         <strong>Tipo: </strong>
-        <br>
+        <br />
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="tipo" id="escpecial" value="Especial">
+          <input class="form-check-input" type="radio" formControlName="tipo" id="escpecial" value="Especial" />
           <label class="form-check-label">Especial</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="tipo" id="otro" value="Otro">
+          <input class="form-check-input" type="radio" formControlName="tipo" id="otro" value="Otro" />
           <label class="form-check-label">Otro</label>
         </div>
       </div>
       <div class="col md-4" *ngIf="prueba.tipo === 'Otro'">
         <strong>¿Cuál? </strong>
-        <br>
-        {{prueba.cualTipo}}
+        <br />
+        {{ prueba.cualTipo }}
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="row mt-2">
       <div class="col md-6">
-        <strong>Facultad: </strong> {{prueba.facultad}}
-
+        <strong>Facultad: </strong> {{ prueba.facultad }}
       </div>
       <div class="col md-6">
-        <strong>Proyecto curricular: </strong>{{prueba.carrera}}
+        <strong>Proyecto curricular: </strong>{{ prueba.carrera }}
       </div>
-      <div class="col md-4" *ngIf="prueba.dependencia !==null">
+      <div class="col md-4" *ngIf="prueba.dependencia !== null">
         <strong>Dependencia: </strong>
       </div>
-      <div class="col md-4" *ngIf="prueba.procedenteDe !==null">
+      <div class="col md-4" *ngIf="prueba.procedenteDe !== null">
         <strong>Procedente de: </strong>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="row mt-2">
       <div class="col md-6">
-        <strong>Dirección: </strong> {{prueba.direccion}}
+        <strong>Dirección: </strong> {{ prueba.direccion }}
       </div>
       <div class="col md-6">
-        <strong>Teléfono: </strong> {{prueba.telefono}}
+        <strong>Teléfono: </strong> {{ prueba.telefono }}
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="row mt-2">
       <div class="flex-column col float-right md-6">
-        <strong>Contacto de emergencia: </strong> {{prueba.contactoEmergencia}}
+        <strong>Contacto de emergencia: </strong>
+        {{ prueba.contactoEmergencia }}
       </div>
       <div class="col md-6">
-        <strong>Parentesco: </strong> {{prueba.parentesco}}
+        <strong>Parentesco: </strong> {{ prueba.parentesco }}
       </div>
     </div>
     <div class="row mt-3 mb-4">
       <div class="col md-6">
-        <strong>Dirección: </strong> {{prueba.direccionContacto}}
+        <strong>Dirección: </strong> {{ prueba.direccionContacto }}
       </div>
       <div class="col md-6">
-        <strong>Teléfono: </strong> {{prueba.telefonoContacto}}
+        <strong>Teléfono: </strong> {{ prueba.telefonoContacto }}
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="row mt-2">
       <div class="col md-6">
         <strong>Situación Académica: </strong>
-        <br>
+        <br />
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="prueba"
-            value="Prueba Académica">
+            value="Prueba Académica" />
           <label class="form-check-label" for="prueba">Prueba Académica</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="activo" value="Activo">
+          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="activo"
+            value="Activo" />
           <label class="form-check-label" for="activo">Activo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="otra" value="Otro">
+          <input class="form-check-input" type="radio" formControlName="situacionAcademica" id="otra" value="Otro" />
           <label class="form-check-label" for="otra">Otro</label>
         </div>
       </div>
       <div class="col md-6">
         <strong>¿Cuál?</strong>
-        <br>
-        {{prueba.cualSituacion}}
+        <br />
+        {{ prueba.cualSituacion }}
       </div>
     </div>
   </form>
@@ -157,8 +151,8 @@
           Aspectos básicos de medicina
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <h5 class="titulo">Medicina General </h5>
-      <hr>
+      <h5 class="titulo">Medicina General</h5>
+      <hr />
       <form [formGroup]="medicinaForm">
         <div class="row">
           <div class="col md-12 me-4">
@@ -169,20 +163,22 @@
             </div>
           </div>
           <!-- Antecedentes -->
-          <h6 class="titulo mt-2">Antecedentes</h6>
-          <hr>
-          <div class="col md-6 me-4">
-            <div class="form-floating">
-              <textarea class="form-control textArea-mid" formControlName="patologicos" placeholder="Patológicos"
-                id="patologicos"></textarea>
-              <label for="patologicos"><strong> Patológicos</strong></label>
+
+          <div class="row me-2">
+            <h6 class="titulo mt-2 mb-2 ">Antecedentes</h6>
+            <div class="col md-6 me-4">
+              <div class="form-floating">
+                <textarea class="form-control textArea-mid" formControlName="patologicos" placeholder="Patológicos"
+                  id="patologicos"></textarea>
+                <label for="patologicos"><strong> Patológicos</strong></label>
+              </div>
             </div>
-          </div>
-          <div class="col md-6 me-4">
-            <div class="form-floating">
-              <textarea class="form-control textArea-mid" formControlName="hospitalarios" placeholder="hospitalarios"
-                id="hospitalarios"></textarea>
-              <label for="hospitalarios"><strong> Hospitalarios</strong></label>
+            <div class="col md-6 me-4">
+              <div class="form-floating">
+                <textarea class="form-control textArea-mid" formControlName="hospitalarios" placeholder="hospitalarios"
+                  id="hospitalarios"></textarea>
+                <label for="hospitalarios"><strong> Hospitalarios</strong></label>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -245,55 +241,54 @@
           <div class="row">
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="menarquia" class="form-label">Menarquía</label>
-              <input type="text" class="form-control" id="menarquia" formControlName="menarquia">
+              <input type="text" class="form-control" id="menarquia" formControlName="menarquia" />
             </div>
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="fur" class="form-label">FUR</label>
-              <input type="text" class="form-control" id="fur" formControlName="fur">
+              <input type="text" class="form-control" id="fur" formControlName="fur" />
             </div>
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="ciclos" class="form-label">Ciclos</label>
-              <input type="text" class="form-control" id="ciclos" formControlName="ciclos">
+              <input type="text" class="form-control" id="ciclos" formControlName="ciclos" />
             </div>
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="ias" class="form-label">Inicio A.S.</label>
-              <input type="text" class="form-control" id="ias" formControlName="ias">
+              <input type="text" class="form-control" id="ias" formControlName="ias" />
             </div>
           </div>
           <div class="row">
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="compañeros" class="form-label">Compañeros Sexuales</label>
-              <input type="text" class="form-control" id="compañeros" formControlName="compañeros">
+              <input type="text" class="form-control" id="compañeros" formControlName="compañeros" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="fo" class="form-label">FO:G</label>
-              <input type="text" class="form-control" id="fo" formControlName="fo">
+              <input type="text" class="form-control" id="fo" formControlName="fo" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="pp" class="form-label">PP</label>
-              <input type="text" class="form-control" id="pp" formControlName="pp">
+              <input type="text" class="form-control" id="pp" formControlName="pp" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="fup" class="form-label">FUP</label>
-              <input type="text" class="form-control" id="fup" formControlName="fup">
+              <input type="text" class="form-control" id="fup" formControlName="fup" />
             </div>
           </div>
           <div class="row">
             <div class="col md- mb-3 me-4 mt-2">
               <label for="fuccv" class="form-label">Fecha Última CCV</label>
-              <input type="text" class="form-control" id="fuccv" formControlName="fuccv">
+              <input type="text" class="form-control" id="fuccv" formControlName="fuccv" />
               <label for="resultadoccv" class="form-label">Resultado</label>
-              <input type="text" class="form-control" id="resultadoccv" formControlName="resultadoccv">
+              <input type="text" class="form-control" id="resultadoccv" formControlName="resultadoccv" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="examenSeno" class="form-label">Examen de Seno</label>
-              <input type="text" class="form-control" id="examenSeno" formControlName="examenSeno">
+              <input type="text" class="form-control" id="examenSeno" formControlName="examenSeno" />
               <label for="resultadoSeno" class="form-label">Resultado</label>
-              <input type="text" class="form-control" id="resultadoSeno" formControlName="resultadoSeno">
+              <input type="text" class="form-control" id="resultadoSeno" formControlName="resultadoSeno" />
             </div>
           </div>
           <h6 class="titulo">Revisión por Sistemas</h6>
-          <hr>
           <div class="row">
             <div class="col md-6 me-4 mt-2">
               <div class="form-floating">
@@ -380,19 +375,19 @@
               <div class="form-floating">
                 <textarea class="form-control textArea-mid" formControlName="respiratorio" placeholder="Respiratorio"
                   id="respiratorio"></textarea>
-                <label for="respiratorio">
-                  Respiratorio </label>
+                <label for="respiratorio"> Respiratorio </label>
               </div>
             </div>
           </div>
           <!-- Exámenes médicos -->
           <h6 class="titulo">Exámenes de laboratorio y pruebas diagnósticas</h6>
-          <hr>
+
           <div class="col md-6 me-4 mb-4">
             <div class="form-floating">
               <textarea class="form-control textArea-big" formControlName="examenes"
                 placeholder="Exámenes de laboratorio y pruebas diagnósticas" id="examenes"></textarea>
-              <label for="examenes"> Exámenes de laboratorio y pruebas diagnósticas</label>
+              <label for="examenes">
+                Exámenes de laboratorio y pruebas diagnósticas</label>
             </div>
           </div>
           <!-- Examen médico -->
@@ -400,91 +395,91 @@
           <div class="row">
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="ta" class="form-label"><strong>T.A</strong></label>
-              <input type="text" class="form-control" id="ta" formControlName="ta">
+              <input type="text" class="form-control" id="ta" formControlName="ta" />
             </div>
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="fc" class="form-label"><strong>FC</strong></label>
-              <input type="text" class="form-control" id="fc" formControlName="fc">
+              <input type="text" class="form-control" id="fc" formControlName="fc" />
             </div>
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="sao2" class="form-label"><strong>SaO2</strong></label>
-              <input type="text" class="form-control" id="sao2" formControlName="sao2">
+              <input type="text" class="form-control" id="sao2" formControlName="sao2" />
             </div>
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="imc" class="form-label"><strong>IMC</strong></label>
-              <input type="text" class="form-control" id="imc" formControlName="imc">
+              <input type="text" class="form-control" id="imc" formControlName="imc" />
             </div>
           </div>
           <div class="row">
             <div class="col md-3 mb-3 me-4 mt-2">
               <label for="fr" class="form-label"><strong>F.R</strong></label>
-              <input type="text" class="form-control" id="fr" formControlName="fr">
+              <input type="text" class="form-control" id="fr" formControlName="fr" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="tc" class="form-label"><strong>T°C</strong></label>
-              <input type="text" class="form-control" id="tc" formControlName="tc">
+              <input type="text" class="form-control" id="tc" formControlName="tc" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="peso" class="form-label"><strong>Peso</strong></label>
-              <input type="text" class="form-control" id="peso" formControlName="peso">
+              <input type="text" class="form-control" id="peso" formControlName="peso" />
             </div>
             <div class="col md- mb-3 me-4 mt-2">
               <label for="talla" class="form-label"><strong>Talla</strong></label>
-              <input type="text" class="form-control" id="talla" formControlName="talla">
+              <input type="text" class="form-control" id="talla" formControlName="talla" />
             </div>
           </div>
           <div class="row mt-2">
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="estadoGeneral" class="form-label">EstadoGeneral</label>
-              <input type="text" class="form-control" id="estadoGeneral" formControlName="estadoGeneral">
+              <input type="text" class="form-control" id="estadoGeneral" formControlName="estadoGeneral" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="cabezaYCuello" class="form-label">Cabeza y Cuello</label>
-              <input type="text" class="form-control" id="cabezaYCuello" formControlName="cabezaYCuello">
+              <input type="text" class="form-control" id="cabezaYCuello" formControlName="cabezaYCuello" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="orl" class="form-label">O.R.L</label>
-              <input type="text" class="form-control" id="orl" formControlName="orl">
+              <input type="text" class="form-control" id="orl" formControlName="orl" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="ojos" class="form-label">Ojos</label>
-              <input type="text" class="form-control" id="ojos" formControlName="ojos">
+              <input type="text" class="form-control" id="ojos" formControlName="ojos" />
             </div>
           </div>
           <div class="row mt-2">
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="torax" class="form-label">Tórax</label>
-              <input type="text" class="form-control" id="torax" formControlName="torax">
+              <input type="text" class="form-control" id="torax" formControlName="torax" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="ruidosRespiratorios" class="form-label">Ruidos Respiratorios</label>
-              <input type="text" class="form-control" id="ruidosRespiratorios" formControlName="ruidosRespiratorios">
+              <input type="text" class="form-control" id="ruidosRespiratorios" formControlName="ruidosRespiratorios" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="ruidosCardiacos" class="form-label">Ruidos Cardíacos</label>
-              <input type="text" class="form-control" id="ruidosCardiacos" formControlName="ruidosCardiacos">
+              <input type="text" class="form-control" id="ruidosCardiacos" formControlName="ruidosCardiacos" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="abdomen" class="form-label">Abdomen</label>
-              <input type="text" class="form-control" id="abdomen" formControlName="abdomen">
+              <input type="text" class="form-control" id="abdomen" formControlName="abdomen" />
             </div>
           </div>
           <div class="row mt-2">
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="neurologicoE" class="form-label">Neurológico</label>
-              <input type="text" class="form-control" id="neurologicoE" formControlName="neurologicoE">
+              <input type="text" class="form-control" id="neurologicoE" formControlName="neurologicoE" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="genital" class="form-label">Genital</label>
-              <input type="text" class="form-control" id="genital" formControlName="genital">
+              <input type="text" class="form-control" id="genital" formControlName="genital" />
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <label for="extremidades" class="form-label">Extremidades</label>
-              <input type="text" class="form-control" id="extremidades" formControlName="extremidades">
+              <input type="text" class="form-control" id="extremidades" formControlName="extremidades" />
             </div>
           </div>
           <h6 class="titulo">Impresión Diagnóstica</h6>
-          <hr>
+
           <div class="row">
             <div class="col md-6 me-4 mt-2">
               <div class="form-floating">
@@ -500,13 +495,13 @@
             </div>
           </div>
           <div class="row">
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <div class="form-floating">
                 <textarea class="form-control textArea-sm" formControlName="id3" placeholder="3" id="id3"></textarea>
                 <label for="id3"> 3</label>
               </div>
             </div>
-            <div class=" col md-6 me-4 mb-4">
+            <div class="col md-6 me-4 mb-4">
               <div class="form-floating">
                 <textarea class="form-control textArea-sm" formControlName="id4" placeholder="4" id="id4"></textarea>
                 <label for="id4"> 4</label>
@@ -515,46 +510,54 @@
           </div>
           <!-- Análisis -->
           <h6 class="titulo">Análisis y plan de manejo</h6>
-          <hr>
+
           <div class="row mt-2">
             <div class="col md-6 me-4 mb-4">
               <div class="input-group">
                 <input type="text" class="form-control" (keyup.enter)="agregarAnalisis()" name="nuevoAnalisis"
-                  placeholder="Agregar" [formControl]="nuevoAnalisis">
-                <button class="btn btn-outline-primary" type="button" (click)="agregarAnalisis()"> Agregar</button>
+                  placeholder="Agregar" [formControl]="nuevoAnalisis" />
+                <button class="btn btn-outline-primary" type="button" (click)="agregarAnalisis()">
+                  Agregar
+                </button>
               </div>
             </div>
             <div class="row mt-2">
               <div class="col md-6 me-4 mb-4" formArrayName="analisis">
-                <div class="input-group mb-1" *ngFor="let analisis of analisisArr.controls;let i=index">
-                  <input class=" form-control" *ngIf="analisisArr.length>0" [formControlName]="i">
-                  <button class="btn btn-outline-danger" type="button" (click)="borrarAnalisis(i)"> Borrar</button>
+                <div class="input-group mb-1" *ngFor="let analisis of analisisArr.controls; let i = index">
+                  <input class="form-control" *ngIf="analisisArr.length > 0" [formControlName]="i" />
+                  <button class="btn btn-outline-danger" type="button" (click)="borrarAnalisis(i)">
+                    Borrar
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <!-- Evolución -->
           <h6 class="titulo">Evolución</h6>
-          <hr>
+
           <div class="row mt-2">
             <div class="col md-6 me-4 mb-4">
               <div class="input-group">
                 <input type="text" class="form-control" (keyup.enter)="agregarEvolucion()" name="nuevaEvolucion"
-                  placeholder="Agregar" [formControl]="nuevaEvolucion">
-                <button class="btn btn-outline-primary" type="button" (click)="agregarEvolucion()"> Agregar</button>
+                  placeholder="Agregar" [formControl]="nuevaEvolucion" />
+                <button class="btn btn-outline-primary" type="button" (click)="agregarEvolucion()">
+                  Agregar
+                </button>
               </div>
             </div>
             <div class="row mt-2">
               <div class="col md-6 me-4 mb-4" formArrayName="evolucion">
-                <div class="input-group mb-1" *ngFor="let evolucion of evolucionArr.controls;let i=index">
-                  <input class=" form-control" *ngIf="evolucionArr.length>0" [formControlName]="i">
-                  <button class="btn btn-outline-danger" type="button" (click)="borrarEvolucion(i)"> Borrar</button>
+                <div class="input-group mb-1" *ngFor="let evolucion of evolucionArr.controls; let i = index">
+                  <input class="form-control" *ngIf="evolucionArr.length > 0" [formControlName]="i" />
+                  <button class="btn btn-outline-danger" type="button" (click)="borrarEvolucion(i)">
+                    Borrar
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <h6 class="titulo">Plan de Manejo</h6>
-          <hr>
+
           <div class="row mt-2">
             <div class="col md-12 me-4">
               <div class="form-floating">
@@ -567,7 +570,7 @@
         </div>
         <div class="row mt-4">
           <div class="col titulo">
-            <label><strong>Realizó: </strong>{{pruebaEspecialista.nombre|ngxCapitalize}}</label>
+            <label><strong>Realizó: </strong>{{ pruebaEspecialista.nombre | ngxCapitalize }}</label>
             <button class="card-button m-2 mt-4 float-end" type="submit" mat-raised-button
               [disabled]="!medicinaForm.valid">
               <mat-icon>save</mat-icon> Guardar
@@ -590,9 +593,65 @@
           Aspectos básicos fisioterapia
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat libero earum ullam illum officiis, illo
-        minima nisi quidem doloribus voluptatibus ad dolorem possimus et sit praesentium eum consequuntur similique
-        architecto.</p>
+      <form [formGroup]="fisioterapiaForm">
+        <h5 class="titulo"> Fisioterapia</h5>
+        <hr />
+        <div class="col md-12 mt-4 mb-4 me-4">
+          <div class="form-floating">
+            <textarea class="form-control textArea-big" formControlName="motivoConsultaFisio"
+              placeholder="Motivo de consulta y enfermedad actual" id="motivoFisio"></textarea>
+            <label for="motivoFisio"> Motivo de consulta y enfermedad actual</label>
+          </div>
+        </div>
+        <h6 class="titulo mt-2">Valoración</h6>
+        <div class="col md-12 mb-4 me-4 mt-4">
+          <div class="form-floating">
+            <textarea class="form-control textArea-big" formControlName="valoracion" placeholder="Valoración"
+              id="valoracion"></textarea>
+            <label for="valoracion">Valoración</label>
+          </div>
+        </div>
+        <h6 class="titulo mt-2">Plan de Manejo</h6>
+        <div class="col md-12 mb-4 me-4 mt-4">
+          <div class="form-floating">
+            <textarea class="form-control textArea-big" formControlName="planDeManejoFisio" placeholder="Plan de Manejo"
+              id="planDeManejoFisio"></textarea>
+            <label for="planDeManejoFisio">Plan de Manejo</label>
+          </div>
+        </div>
+        <h6 class="titulo mt-2">Evolución</h6>
+        <div class="row mt-4 mb-4">
+          <div class="col md-6 me-4 mb-4">
+            <div class="input-group">
+              <input type="text" class="form-control" (keyup.enter)="agregarEvolucionFisio()" name="nuevaEvolucionFisio"
+                placeholder="Agregar" [formControl]="nuevaEvolucionFisio" />
+              <button class="btn btn-outline-primary" type="button" (click)="agregarEvolucionFisio()">
+                Agregar
+              </button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col md-6 me-4 mb-4" formArrayName="evolucionFisio">
+              <div class="input-group mb-1" *ngFor="let evolucion of evolucionFisioArr.controls; let i = index">
+                <input class="form-control" *ngIf="evolucionFisioArr.length > 0" [formControlName]="i" />
+                <button class="btn btn-outline-danger" type="button" (click)="borrarEvolucionFisio(i)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col titulo">
+            <label><strong>Realizó: </strong>{{ pruebaEspecialista.nombre | ngxCapitalize }}</label>
+            <button class="card-button m-2 mt-4 float-end" type="submit" mat-raised-button
+              [disabled]="!medicinaForm.valid">
+              <mat-icon>save</mat-icon> Guardar
+            </button>
+          </div>
+        </div>
+      </form>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
@@ -608,9 +667,12 @@
           Aspectos básicos odontología
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat libero earum ullam illum officiis, illo
-        minima nisi quidem doloribus voluptatibus ad dolorem possimus et sit praesentium eum consequuntur similique
-        architecto.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat libero
+        earum ullam illum officiis, illo minima nisi quidem doloribus
+        voluptatibus ad dolorem possimus et sit praesentium eum consequuntur
+        similique architecto.
+      </p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
@@ -626,9 +688,12 @@
           Aspectos básicos psicología
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat libero earum ullam illum officiis, illo
-        minima nisi quidem doloribus voluptatibus ad dolorem possimus et sit praesentium eum consequuntur similique
-        architecto.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat libero
+        earum ullam illum officiis, illo minima nisi quidem doloribus
+        voluptatibus ad dolorem possimus et sit praesentium eum consequuntur
+        similique architecto.
+      </p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

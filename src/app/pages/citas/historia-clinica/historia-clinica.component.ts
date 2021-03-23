@@ -8,7 +8,6 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./historia-clinica.component.css']
 })
 export class HistoriaClinicaComponent implements OnInit {
-  panelOpenState = false;
   constructor(private fb: FormBuilder) { }
   especialista = new FormGroup({
     codigo: new FormControl(null, Validators.required),
@@ -82,6 +81,13 @@ export class HistoriaClinicaComponent implements OnInit {
     analisis: this.fb.array([]),
     evolucion: this.fb.array([]),
     planDeManejo: ['', Validators.required],
+  });
+  nuevaEvolucionFisio: FormControl = this.fb.control('', Validators.required);
+  fisioterapiaForm: FormGroup = this.fb.group({
+    motivoConsultaFisio: ['', Validators.required],
+    valoracion: ['', Validators.required],
+    planDeManejoFisio: ['', Validators.required],
+    evolucionFisio: this.fb.array([]),
   })
   model: NgbDateStruct;
   prueba = {
@@ -90,8 +96,8 @@ export class HistoriaClinicaComponent implements OnInit {
     facultad: 'Ingeniería', carrera: 'Ingeniería de Sistemas', direccion: 'Calle falsa 123', telefono: '2021202', contactoEmergencia: 'María Camelo',
     parentesco: 'Madre', direccionContacto: 'Calle falsa 123', telefonoContacto: '2021202', situacionAcademica: 'Otro', cualSituacion: 'xxxxxx'
   }
-  pruebaEspecialista={
-    nombre:'NOMBRE1 APELLIDO1',
+  pruebaEspecialista = {
+    nombre: 'NOMBRE1 APELLIDO1',
     especialidad: 'ESPECIALIDAD 1',
   }
   ngOnInit() {
@@ -101,6 +107,9 @@ export class HistoriaClinicaComponent implements OnInit {
   }
   get evolucionArr() {
     return this.medicinaForm.get('evolucion') as FormArray;
+  }
+  get evolucionFisioArr() {
+    return this.fisioterapiaForm.get('evolucionFisio') as FormArray;
   }
   agregarAnalisis() {
     if (this.nuevoAnalisis.invalid) {
@@ -116,11 +125,21 @@ export class HistoriaClinicaComponent implements OnInit {
     this.evolucionArr.push(new FormControl(this.nuevaEvolucion.value, Validators.required));
     this.nuevaEvolucion.reset();
   }
+  agregarEvolucionFisio() {
+    if (this.nuevaEvolucionFisio.invalid) {
+      return
+    }
+    this.evolucionFisioArr.push(new FormControl(this.nuevaEvolucionFisio.value, Validators.required));
+    this.nuevaEvolucionFisio.reset();
+  }
   borrarAnalisis(i: number) {
     this.analisisArr.removeAt(i);
   }
   borrarEvolucion(i: number) {
     this.evolucionArr.removeAt(i);
+  }
+  borrarEvolucionFisio(i: number) {
+    this.evolucionFisioArr.removeAt(i);
   }
   buscarEspecialista() {
     // TODO
