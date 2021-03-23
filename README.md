@@ -1,7 +1,7 @@
 # SIBUD - CITAS E HISTORIA CLÍNICA
 
  Permite centralizar y gestionar el manejo de la información de salud en la Universidad Distrital por medio de diferentes subsistemas, puntualmente se gestionan los siguientes procesos:
- - Agendamiento de historias clínicas
+ - Agendamiento de citas médicas
  - Consulta de pacientes
  - Gestión de Historias Clínicas
  
