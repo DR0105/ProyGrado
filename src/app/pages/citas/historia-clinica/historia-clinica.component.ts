@@ -89,6 +89,34 @@ export class HistoriaClinicaComponent implements OnInit {
     planDeManejoFisio: ['', Validators.required],
     evolucionFisio: this.fb.array([]),
   })
+  nuevaEvolucionPsico: FormControl = this.fb.control('', Validators.required);
+  psicologiaForm: FormGroup = this.fb.group({
+    viveCon: ['', Validators.required],
+    difusos: ['', Validators.required],
+    claros: ['', Validators.required],
+    rigidos: ['', Validators.required],
+    actualesFamiliares: ['', Validators.required],
+    pasadosFamiliares: ['', Validators.required],
+    actualesPersonales: ['', Validators.required],
+    pasadosPersonales: ['', Validators.required],
+    figurasDeAutoridad: ['', Validators.required],
+    pares: ['', Validators.required],
+    pareja: ['', Validators.required],  
+    relacionesSexuales: ['', Validators.required],
+    satisfaccion: ['', Validators.required],
+    metodoProteccion: ['', Validators.required],
+    orientacionSexual: ['', Validators.required],
+    economicos: ['', Validators.required],
+    judiciales: ['', Validators.required],
+    drogas: ['', Validators.required],
+    motivoConsultaPsico: ['', Validators.required],
+    problematicaActual: ['', Validators.required],
+    estiloAfrontamiento: ['', Validators.required],
+    comportamientoDuranteConsulta: ['', Validators.required],
+    hipotesis: ['', Validators.required],
+    acuerdos: ['', Validators.required],
+    evolucionPsico: this.fb.array([]),
+  })
   model: NgbDateStruct;
   prueba = {
     nombre: 'Benito Suárez', codigo: 20212021021, documento: 2021202120, eps: 'Famisanar', fechaDeNacimiento: new Date(),
@@ -111,6 +139,9 @@ export class HistoriaClinicaComponent implements OnInit {
   get evolucionFisioArr() {
     return this.fisioterapiaForm.get('evolucionFisio') as FormArray;
   }
+  get evolucionPsicoArr() {
+    return this.psicologiaForm.get('evolucionPsico') as FormArray;
+  }
   agregarAnalisis() {
     if (this.nuevoAnalisis.invalid) {
       return
@@ -132,6 +163,13 @@ export class HistoriaClinicaComponent implements OnInit {
     this.evolucionFisioArr.push(new FormControl(this.nuevaEvolucionFisio.value, Validators.required));
     this.nuevaEvolucionFisio.reset();
   }
+  agregarEvolucionPsico() {
+    if (this.nuevaEvolucionPsico.invalid) {
+      return
+    }
+    this.evolucionPsicoArr.push(new FormControl(this.nuevaEvolucionPsico.value, Validators.required));
+    this.nuevaEvolucionPsico.reset();
+  }
   borrarAnalisis(i: number) {
     this.analisisArr.removeAt(i);
   }
@@ -140,6 +178,9 @@ export class HistoriaClinicaComponent implements OnInit {
   }
   borrarEvolucionFisio(i: number) {
     this.evolucionFisioArr.removeAt(i);
+  }
+  borrarEvolucionPsico(i: number) {
+    this.evolucionPsicoArr.removeAt(i);
   }
   buscarEspecialista() {
     // TODO
