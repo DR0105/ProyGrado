@@ -15,6 +15,18 @@
 }
 
 .border-right {
-    border-right: 1px solid #d0cccc
-    ;
+    border-right: 1px solid #d0cccc;
+}
+
+.texto-vertical {
+    width         : 20px;
+    word-wrap     : break-word;
+    text-align    : center;
+    text-transform: uppercase;
+    font-size     : 21px;
+    position      : relative;
+}
+
+.ms2-5 {
+    margin-left: 0.25px;
 }

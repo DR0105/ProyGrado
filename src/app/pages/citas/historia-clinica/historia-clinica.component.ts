@@ -123,6 +123,16 @@ export class HistoriaClinicaComponent implements OnInit {
     puslo: ['', Validators.required],
     tensionArterial: ['', Validators.required],
     respiracion: ['', Validators.required],
+    articulacionTemporoMandibula: ['', Validators.required],
+    labios: ['', Validators.required],
+    lengua: ['', Validators.required],
+    paladar: ['', Validators.required],
+    pisoBoca: ['', Validators.required],
+    carrillos: ['', Validators.required],
+    glandulasSalivales: ['', Validators.required],
+    maxilares: ['', Validators.required],
+    senosMaxilares: ['', Validators.required],
+    musculosMasticadores: ['', Validators.required],
   })
   // Psicología
   nuevaEvolucionPsico: FormControl = this.fb.control('', Validators.required);
