@@ -5,9 +5,16 @@
 .textArea-big {
     height: 50px;
 }
-.textArea-mid{
+
+.textArea-mid {
     height: 25px;
 }
-.textArea-sm{
+
+.textArea-sm {
     height: 10px;
+}
+
+.border-right {
+    border-right: 1px solid #d0cccc
+    ;
 }

@@ -595,27 +595,29 @@
       <form [formGroup]="fisioterapiaForm">
         <h5 class="titulo mt-4 mb-4"> Fisioterapia</h5>
         <hr />
-        <div class="col md-12 mt-4 mb-4 me-4">
-          <div class="form-floating">
-            <textarea class="form-control textArea-big" formControlName="motivoConsultaFisio"
-              placeholder="Motivo de consulta y enfermedad actual" id="motivoFisio"></textarea>
-            <label for="motivoFisio"> Motivo de consulta y enfermedad actual</label>
+        <div class="row">
+          <div class="col md-12 mt-4 mb-4 me-4">
+            <div class="form-floating">
+              <textarea class="form-control textArea-big" formControlName="motivoConsultaFisio"
+                placeholder="Motivo de consulta y enfermedad actual" id="motivoFisio"></textarea>
+              <label for="motivoFisio"> Motivo de consulta y enfermedad actual</label>
+            </div>
           </div>
-        </div>
-        <h6 class="titulo mt-2">Valoración</h6>
-        <div class="col md-12 mb-4 me-4 mt-4">
-          <div class="form-floating">
-            <textarea class="form-control textArea-big" formControlName="valoracion" placeholder="Valoración"
-              id="valoracion"></textarea>
-            <label for="valoracion">Valoración</label>
+          <h6 class="titulo mt-2">Valoración</h6>
+          <div class="col md-12 mb-4 me-4 mt-4">
+            <div class="form-floating">
+              <textarea class="form-control textArea-big" formControlName="valoracion" placeholder="Valoración"
+                id="valoracion"></textarea>
+              <label for="valoracion">Valoración</label>
+            </div>
           </div>
-        </div>
-        <h6 class="titulo mt-2">Plan de Manejo</h6>
-        <div class="col md-12 mb-4 me-4 mt-4">
-          <div class="form-floating">
-            <textarea class="form-control textArea-big" formControlName="planDeManejoFisio" placeholder="Plan de Manejo"
-              id="planDeManejoFisio"></textarea>
-            <label for="planDeManejoFisio">Plan de Manejo</label>
+          <h6 class="titulo mt-2">Plan de Manejo</h6>
+          <div class="col md-12 mb-4 me-4 mt-4">
+            <div class="form-floating">
+              <textarea class="form-control textArea-big" formControlName="planDeManejoFisio"
+                placeholder="Plan de Manejo" id="planDeManejoFisio"></textarea>
+              <label for="planDeManejoFisio">Plan de Manejo</label>
+            </div>
           </div>
         </div>
         <h6 class="titulo mt-2">Evolución</h6>
@@ -640,7 +642,6 @@
             </div>
           </div>
         </div>
-
         <div class="row mt-4">
           <div class="col titulo">
             <label><strong>Realizó: </strong>{{ pruebaEspecialista.nombre | ngxCapitalize }}</label>
@@ -666,9 +667,357 @@
           Aspectos básicos odontología
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <!-- <form [formGroup]="odontologiaForm">
+      <form [formGroup]="odontologiaForm">
         <h5 class="titulo"> Odontología</h5>
         <hr />
+        <div class="row">
+          <div class="col md-12 mt-4 mb-4 me-4">
+            <div class="form-floating">
+              <textarea class="form-control textArea-big" formControlName="motivoConsultaOdonto"
+                placeholder="Motivo de consulta y enfermedad actual" id="motivoOdonto"></textarea>
+              <label for="motivoOdonto"> Motivo de consulta y enfermedad actual</label>
+            </div>
+          </div>
+          <h6 class="titulo mt-2">Origen de la enfermedad</h6>
+          <h6 class="titulo">Anamnesis</h6>
+        </div>
+        <!--  -->
+        <div class="row mt-2">
+          <div class="col me-4 border-right ">
+            <label class="me-2">Tratamiento médico: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="tratamientoMedico" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="tratamientoMedico" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="tratamientoMedico" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4 ">
+            <label class="me-2">Ingestión de medicamentos: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="ingestionMedicamentos" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="ingestionMedicamentos" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="ingestionMedicamentos" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col me-4 border-right ">
+            <label class="me-2">Reacciones alérgicas: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="reaccionesAlergicas" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="reaccionesAlergicas" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="reaccionesAlergicas" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4">
+            <label class="me-2">Hemorragias: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hemorragias" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hemorragias" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hemorragias" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col me-4 border-right">
+            <label class="me-2">Irradiaciones: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="irradiaciones" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="irradiaciones" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="irradiaciones" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4">
+            <label class="me-2">Sinusitis: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="sinusitis" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="sinusitis" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="sinusitis" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col me-4 border-right">
+            <label class="me-2">Enfermedades Respiratorias: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="enfermedadesRespiratorias"
+                value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="enfermedadesRespiratorias" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="enfermedadesRespiratorias" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4">
+            <label class="me-2">Cardiopatías: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="cardiopatias" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="cardiopatias" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="cardiopatias" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col me-4 border-right">
+            <label class="me-2">Diabetes: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="diabetes" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="diabetes" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="diabetes" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4">
+            <label class="me-2">Fiebre Reumática: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="fiebreReumatica" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="fiebreReumatica" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="fiebreReumatica" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col me-4 border-right">
+            <label class="me-2">Hepatitis: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hepatitis" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hepatitis" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hepatitis" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4">
+            <label class="me-2">Hipertensión Arterial: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hipertensionArterial" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hipertensionArterial" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="hipertensionArterial" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col me-4 border-right">
+            <label class="me-2">Otras enfermedades: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="otrasEnfermedades" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="otrasEnfermedades" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="otrasEnfermedades" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+          <div class="col me-4">
+            <label class="me-2">Antecedentes familiares: </label>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="antecedentesFamiliares" value="No Sabe" />
+              <label class="form-check-label">No sabe</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="antecedentesFamiliares" value="No" />
+              <label class="form-check-label">No</label>
+            </div>
+            <div class="form-check form-check-inline float-end">
+              <input class="form-check-input" type="radio" formControlName="antecedentesFamiliares" value="Si" />
+              <label class="form-check-label">Si</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <strong>Otros: </strong>
+          <div class="row mt-2">
+            <div class="col me-4 ">
+              <strong>Hábitos de higiene oral</strong>
+            </div>
+            <div class="col me-4 ">
+              <strong>Observaciones</strong>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col me-4 border-right ">
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0 me-2" type="checkbox" formControlName="cepillado" value="">
+                    Cepillado
+                  </div>
+                  <input type="text" class="form-control" formControlName="cepilladoCuantas"
+                    placeholder="¿Cuántas veces?">
+                </div>
+              </div>
+            </div>
+            <div class="col me-4 ">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-2">
+                  <label for="dulces" class="col-form-label">Dulces</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="dulces" formControlName="dulces" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col me-4 border-right ">
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0 me-2" type="checkbox" formControlName="sedaDental" value="">
+                    Seda Dental
+                  </div>
+                  <input type="text" class="form-control" formControlName="sedaDentalCuantas"
+                    placeholder="¿Cuántas veces?">
+                </div>
+              </div>
+            </div>
+            <div class="col me-4">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-2">
+                  <label for="fuma" class="col-form-label">Fuma </label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="fuma" formControlName="fuma" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col me-4 border-right ">
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0 me-2" type="checkbox" formControlName="enjuague" value="">
+                    Enjuague
+                  </div>
+                  <input type="text" class="form-control" formControlName="enjuagueCuantas"
+                    placeholder="¿Cuántas veces?">
+                </div>
+              </div>
+            </div>
+            <div class="col me-4">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-2">
+                  <label for="chicles" class="col-form-label">Chicles</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" id="chicles" formControlName="chicles" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <strong>Signos vitales</strong>
+          <div class="row">
+            <div class="col md-3 mb-3 me-4 mt-2">
+              <label for="temperatura" class="form-label"><strong>Temperatura</strong></label>
+              <input type="text" class="form-control" id="temperatura" formControlName="temperatura" />
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="pulso" class="form-label"><strong>Pulso</strong></label>
+              <input type="text" class="form-control" id="pulso" formControlName="pulso" />
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="tensionAterial" class="form-label"><strong>Tension Aterial</strong></label>
+              <input type="text" class="form-control" id="tensionAterial" formControlName="tensionAterial" />
+            </div>
+            <div class="col md- mb-3 me-4 mt-2">
+              <label for="respiracion" class="form-label"><strong>Respiración</strong></label>
+              <input type="text" class="form-control" id="respiracion" formControlName="respiracion" />
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h6 class="titulo">Examen físico estomatológico</h6>
+
 
         <div class="row mt-4">
           <div class="col titulo">
@@ -679,7 +1028,7 @@
             </button>
           </div>
         </div>
-      </form> -->
+      </form>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
@@ -920,8 +1269,6 @@
             </div>
           </div>
         </div>
-
-
         <div class="row mt-4">
           <div class="col titulo">
             <label><strong>Realizó: </strong>{{ pruebaEspecialista.nombre | ngxCapitalize }}</label>

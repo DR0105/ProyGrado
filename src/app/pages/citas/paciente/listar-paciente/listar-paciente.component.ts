@@ -16,7 +16,7 @@ export class ListarPacienteComponent implements OnInit {
   estado = "";
   telefono = "";
 
-  constructor(private estudianteService: EstudiantesService) {}
+  constructor(private estudianteService: EstudiantesService) { }
   miFormulario = new FormGroup({
     codigo: new FormControl(null, Validators.required),
   });
@@ -33,7 +33,7 @@ export class ListarPacienteComponent implements OnInit {
           .getProyecto(paciente.carrera)
           .subscribe((data: any) => {
             this.carrera = data.carrerasCollection.carrera[0].nombre;
-            // console.log(this.carrera);
+            console.log(data);
           });
       });
   }

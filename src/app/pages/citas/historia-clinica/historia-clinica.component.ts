@@ -12,11 +12,13 @@ export class HistoriaClinicaComponent implements OnInit {
   especialista = new FormGroup({
     codigo: new FormControl(null, Validators.required),
   });
+  // Datos básicos
   datosBasicos: FormGroup = this.fb.group({
     vinculacion: ['', Validators.required],
     tipo: ['', Validators.required],
     situacionAcademica: ['', Validators.required],
   })
+  // Medicina General
   nuevoAnalisis: FormControl = this.fb.control('', Validators.required);
   nuevaEvolucion: FormControl = this.fb.control('', Validators.required);
   medicinaForm: FormGroup = this.fb.group({
@@ -82,6 +84,7 @@ export class HistoriaClinicaComponent implements OnInit {
     evolucion: this.fb.array([]),
     planDeManejo: ['', Validators.required],
   });
+  // Fisioterapia
   nuevaEvolucionFisio: FormControl = this.fb.control('', Validators.required);
   fisioterapiaForm: FormGroup = this.fb.group({
     motivoConsultaFisio: ['', Validators.required],
@@ -89,6 +92,39 @@ export class HistoriaClinicaComponent implements OnInit {
     planDeManejoFisio: ['', Validators.required],
     evolucionFisio: this.fb.array([]),
   })
+  // Odontologoía
+  nuevaEvolucionOdonto: FormControl = this.fb.control('', Validators.required);
+  odontologiaForm: FormGroup = this.fb.group({
+    motivoConsultaOdonto: ['', Validators.required],
+    tratamientoMedico: ['', Validators.required],
+    ingestionMedicamentos: ['', Validators.required],
+    reaccionesAlergicas: ['', Validators.required],
+    hemorragias: ['', Validators.required],
+    irradiaciones: ['', Validators.required],
+    sinusitis: ['', Validators.required],
+    enfermedadesRespiratorias: ['', Validators.required],
+    cardiopatias: ['', Validators.required],
+    diabetes: ['', Validators.required],
+    fiebreReumatica: ['', Validators.required],
+    hepatitis: ['', Validators.required],
+    hipertensionArterial: ['', Validators.required],
+    otrasEnfermedades: ['', Validators.required],
+    antecedentesFamiliares: ['', Validators.required],
+    cepillado: ['', Validators.required],
+    cepilladoCuantas: ['', Validators.required],
+    sedaDental: ['', Validators.required],
+    sedaDentalCuantas: ['', Validators.required],
+    enjuague: ['', Validators.required],
+    enjuagueCuantas: ['', Validators.required],
+    dulces: ['', Validators.required],
+    fuma: ['', Validators.required],
+    chicles: ['', Validators.required],
+    temeperatura: ['', Validators.required],
+    puslo: ['', Validators.required],
+    tensionArterial: ['', Validators.required],
+    respiracion: ['', Validators.required],
+  })
+  // Psicología
   nuevaEvolucionPsico: FormControl = this.fb.control('', Validators.required);
   psicologiaForm: FormGroup = this.fb.group({
     viveCon: ['', Validators.required],
@@ -101,7 +137,7 @@ export class HistoriaClinicaComponent implements OnInit {
     pasadosPersonales: ['', Validators.required],
     figurasDeAutoridad: ['', Validators.required],
     pares: ['', Validators.required],
-    pareja: ['', Validators.required],  
+    pareja: ['', Validators.required],
     relacionesSexuales: ['', Validators.required],
     satisfaccion: ['', Validators.required],
     metodoProteccion: ['', Validators.required],
@@ -117,7 +153,6 @@ export class HistoriaClinicaComponent implements OnInit {
     acuerdos: ['', Validators.required],
     evolucionPsico: this.fb.array([]),
   })
-  model: NgbDateStruct;
   prueba = {
     nombre: 'Benito Suárez', codigo: 20212021021, documento: 2021202120, eps: 'Famisanar', fechaDeNacimiento: new Date(),
     lugarDeNacimiento: 'Bogotá', edad: 20, vinculacion: 'Docente', tipo: 'Otro', cualTipo: 'xxxxxx', dependencia: null, procedenteDe: null,
@@ -141,6 +176,9 @@ export class HistoriaClinicaComponent implements OnInit {
   }
   get evolucionPsicoArr() {
     return this.psicologiaForm.get('evolucionPsico') as FormArray;
+  }
+  get evolucionOdontoArr() {
+    return this.psicologiaForm.get('evolucionOdonto') as FormArray;
   }
   agregarAnalisis() {
     if (this.nuevoAnalisis.invalid) {
@@ -170,6 +208,13 @@ export class HistoriaClinicaComponent implements OnInit {
     this.evolucionPsicoArr.push(new FormControl(this.nuevaEvolucionPsico.value, Validators.required));
     this.nuevaEvolucionPsico.reset();
   }
+  agregarEvolucionOdonto() {
+    if (this.nuevaEvolucionPsico.invalid) {
+      return
+    }
+    this.evolucionOdontoArr.push(new FormControl(this.nuevaEvolucionOdonto.value, Validators.required));
+    this.nuevaEvolucionOdonto.reset();
+  }
   borrarAnalisis(i: number) {
     this.analisisArr.removeAt(i);
   }
@@ -181,6 +226,9 @@ export class HistoriaClinicaComponent implements OnInit {
   }
   borrarEvolucionPsico(i: number) {
     this.evolucionPsicoArr.removeAt(i);
+  }
+  borrarEvolucionOdonto(i: number) {
+    this.evolucionOdontoArr.removeAt(i);
   }
   buscarEspecialista() {
     // TODO
