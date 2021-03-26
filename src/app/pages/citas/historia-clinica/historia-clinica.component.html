@@ -1315,12 +1315,46 @@
                   <label class="form-check-label">No</label>
                 </div>
               </div>
-
             </div>
           </div>
-
-
         </div>
+        <div class="row mt-2">
+          <div class="col-md-4 mt-2 mb-2">
+            <div class="form-floating">
+              <textarea class="form-control textArea-mid" formControlName="otrosOdonto" placeholder="Otros ¿Cuál?"
+                id="otrosOdonto"></textarea>
+              <label for="otrosOdonto"> Otros ¿Cuál?</label>
+            </div>
+          </div>
+          <div class="col-md-4 ms-2 mt-2 mb-2">
+            <div class="form-floating">
+              <textarea class="form-control textArea-mid" formControlName="observaciones" placeholder="Observaciones"
+                id="observaciones"></textarea>
+              <label for="observaciones"> Observaciones</label>
+            </div>
+          </div>
+          <div class="col-md-4 ms-2 mt-2 mb-2">
+            <div class="form-floating">
+              <textarea class="form-control textArea-mid" formControlName="ultimaVisitaOdontologo"
+                placeholder="Última visita al odontólogo" id="ultimaVisitaOdontologo"></textarea>
+              <label for="ultimaVisitaOdontologo"> Última visita al odontólogo</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row mt-2 titulo">
+          <h6>Evaluación del estado final</h6>
+          <div class="col-md-4 mt-2 me-4 mb-  2">
+            <div class="form-floating">
+              <textarea class="form-control textArea-mid" formControlName="evaluacionEstadoFinal"
+                placeholder="Observaciones" id="evaluacionEstadoFinal"></textarea>
+              <label for="evaluacionEstadoFinal"> Observaciones</label>
+            </div>
+
+          </div>
+        </div>
+
         <div class="row mt-4">
           <div class="col titulo">
             <label><strong>Realizó: </strong>{{ pruebaEspecialista.nombre | ngxCapitalize }}</label>

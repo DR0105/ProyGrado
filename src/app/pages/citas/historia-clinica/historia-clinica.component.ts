@@ -143,6 +143,10 @@ export class HistoriaClinicaComponent implements OnInit {
     placaBlanda: ['', Validators.required],
     placaCalcificada: ['', Validators.required],
     oclusion: ['', Validators.required],
+    otrosOdonto: ['', Validators.required],
+    observaciones: ['', Validators.required],
+    ultimaVisitaOdontologo: ['', Validators.required],
+    evaluacionEstadoFinal: ['', Validators.required],
 
   })
   // Psicología
