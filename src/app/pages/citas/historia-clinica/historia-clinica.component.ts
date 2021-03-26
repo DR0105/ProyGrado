@@ -119,8 +119,8 @@ export class HistoriaClinicaComponent implements OnInit {
     dulces: ['', Validators.required],
     fuma: ['', Validators.required],
     chicles: ['', Validators.required],
-    temeperatura: ['', Validators.required],
-    puslo: ['', Validators.required],
+    temperatura: ['', Validators.required],
+    pulso: ['', Validators.required],
     tensionArterial: ['', Validators.required],
     respiracion: ['', Validators.required],
     articulacionTemporoMandibula: ['', Validators.required],
@@ -133,6 +133,17 @@ export class HistoriaClinicaComponent implements OnInit {
     maxilares: ['', Validators.required],
     senosMaxilares: ['', Validators.required],
     musculosMasticadores: ['', Validators.required],
+    nerviosoOdontologia: ['', Validators.required],
+    vascularOdontologia: ['', Validators.required],
+    linfaticoRegionalOdontologia: ['', Validators.required],
+    Supernumerarios: ['', Validators.required],
+    abrasion: ['', Validators.required],
+    manchas: ['', Validators.required],
+    patologiaPulpar: ['', Validators.required],
+    placaBlanda: ['', Validators.required],
+    placaCalcificada: ['', Validators.required],
+    oclusion: ['', Validators.required],
+
   })
   // Psicología
   nuevaEvolucionPsico: FormControl = this.fb.control('', Validators.required);
