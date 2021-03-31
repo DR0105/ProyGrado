@@ -7,13 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OdontogramaComponent implements OnInit {
 
-  convensiones: [
-    { nombre: '', color: '', },
-    { nombre: '', color: '', },
+  convensionesArriba: [
+    { nombre: 'Amalgama', color: '', },
+    { nombre: 'Caries', color: '', },
+    { nombre: 'Endodoncia', color: '', },
+    { nombre: 'Ausente', color: '', },
+    { nombre: 'Resina', color: '', },
+    { nombre: 'Implante', color: '', },
+    { nombre: 'Sellante', color: '', },
+    { nombre: 'Corona', color: '', },
   ];
+  convensionesAbajo: [
+    { nombre: 'Normal', color: '', },
+    { nombre: 'Rotado', color: '', },
+    { nombre: 'Desgaste', color: '', },
+    { nombre: 'Corona Destruida', color: '', },
+    { nombre: 'Fracturado', color: '', },
+    { nombre: 'Erupcionado', color: '', },
+    { nombre: 'Obturado', color: '', },
+    { nombre: 'Opturado con resina', color: '', },
+  ]
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
   constructor() { }
 

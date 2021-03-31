@@ -1,14 +1,7 @@
 <table class="table table-borderless justify-content-center">
     <thead>
         <tr>
-            <th>Amalgama</th>
-            <th>Caries</th>
-            <th>Endodoncia</th>
-            <th>Ausente</th>
-            <th>Resina</th>
-            <th>Implante</th>
-            <th>Sellante</th>
-            <th>Corona</th>
+            <th *ngFor="let descripcion of convensionesArriba">{{descripcion.nombre}} </th>
         </tr>
     </thead>
     <tbody>
@@ -61,7 +54,8 @@
     </thead>
     <tbody>
         <td class="justify-content-center">
-            <div class="color" value="Normal" style="text-align: center;background-color:Lavender;width:20px;height:20px;">
+            <div class="color" value="Normal"
+                style="text-align: center;background-color:Lavender;width:20px;height:20px;">
             </div>
         </td>
         <td>
