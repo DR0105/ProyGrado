@@ -21,6 +21,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { HistoriaClinicaComponent } from './historia-clinica/historia-clinica.component';
+import { OdontogramaComponent } from './odontograma/odontograma.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
@@ -30,7 +31,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 
 @NgModule({
-  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent, HistoriaClinicaComponent],
+  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent, HistoriaClinicaComponent, OdontogramaComponent],
   imports: [
     CommonModule,
     CitasRoutingModule,

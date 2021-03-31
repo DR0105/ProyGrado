@@ -157,7 +157,7 @@ export class HistoriaClinicaComponent implements OnInit {
     claros: ['', Validators.required],
     rigidos: ['', Validators.required],
     actualesFamiliares: ['', Validators.required],
-    pasadosFamiliares: ['', Validators.required],
+    pasadosFamiliares:  ['', Validators.required],
     actualesPersonales: ['', Validators.required],
     pasadosPersonales: ['', Validators.required],
     figurasDeAutoridad: ['', Validators.required],
