@@ -31,7 +31,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 
 @NgModule({
-  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent, HistoriaClinicaComponent, OdontogramaComponent],
+  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent, HistoriaClinicaComponent],
   imports: [
     CommonModule,
     CitasRoutingModule,

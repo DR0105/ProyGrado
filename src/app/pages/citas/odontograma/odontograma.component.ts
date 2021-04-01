@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OdontogramaComponent implements OnInit {
 
-  convensionesArriba: [
+  convensionesArribaempleados: any[] = [
     { nombre: 'Amalgama', color: '', },
     { nombre: 'Caries', color: '', },
     { nombre: 'Endodoncia', color: '', },
@@ -17,7 +17,7 @@ export class OdontogramaComponent implements OnInit {
     { nombre: 'Sellante', color: '', },
     { nombre: 'Corona', color: '', },
   ];
-  convensionesAbajo: [
+  convensionesAbajo: any[] = [
     { nombre: 'Normal', color: '', },
     { nombre: 'Rotado', color: '', },
     { nombre: 'Desgaste', color: '', },
