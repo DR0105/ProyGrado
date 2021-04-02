@@ -1,16 +1,14 @@
 <div class="home-div">
-
-    <mat-card class="home-card center">
-        <mat-card-header>
-            <h3> Módulo Salud</h3>
-        </mat-card-header>
-        <mat-card-content class="center">
-            <button mat-raised-button color="primary" (click)="navigateListarCita()">Listar cita</button><br> <br>
-            <button mat-raised-button color="primary" (click)="navigateCrearCita()">Crear cita</button><br> <br>
-            <button mat-raised-button color="primary" (click)="navigateHorarios()">Horarios</button><br> <br>
-            <button mat-raised-button color="primary" (click)="navigateListarPaciente()">Listar paciente</button><br> <br>
-            <button mat-raised-button color="primary" (click)="navigateHistoriaClinica()">Historia clinica</button><br> <br>
-
-        </mat-card-content>
-    </mat-card>
+    <div class="card text-center">
+        <div class="card-body">
+            <div class="d-grid gap-2 justify-content-center">
+                <h4 class="card-title">Citas Médicas</h4>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2" (click)="navigateListarCita()">Listar cita</button>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2" (click)="navigateCrearCita()">Crear cita</button>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2" (click)="navigateHorarios()">Horarios</button>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2" (click)="navigateListarPaciente()">Listar Pciente</button>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2 mb-2" (click)="navigateHistoriaClinica()">Historia Clínica</button>
+            </div>
+        </div>
+    </div>
 </div>
