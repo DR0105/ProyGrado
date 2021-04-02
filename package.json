@@ -12,8 +12,8 @@
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve -o",
+    "build": "ng build --prod",
     "build:prod": "npm run build -- --prod --aot --configuration=production",
     "build:test": "npm run build -- --prod --aot --configuration=test",
     "build:dev": "npm run build -- --prod --aot --configuration=dev",

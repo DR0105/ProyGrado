@@ -1,148 +1,172 @@
-.desabilitado{
-    fill:black;
-    stroke:black;
-    stroke-width:1px;
+.desabilitado {
+    fill: black;
+    stroke: black;
+    stroke-width: 1px;
     opacity: 0.3;
 }
-.marcadoAzul
-{
-    fill:none;
-    stroke:blue;
-    stroke-width:7px;
+
+.marcadoAzul {
+    fill: none;
+    stroke: blue;
+    stroke-width: 7px;
 }
-.marcadoVerde
-{
-    fill:green;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoVerde {
+    fill: green;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoMorado
-{
-    fill:#CC66CC;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoMorado {
+    fill: #CC66CC;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoMarron{
-    fill:#CC6600;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoMarron {
+    fill: #CC6600;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoAmarillo{
-    fill:yellow;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoAmarillo {
+    fill: yellow;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoRojo{
-    fill:red;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoRojo {
+    fill: red;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoCyan{
-    fill:cyan;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoCyan {
+    fill: cyan;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoNaranja{
-    fill:orange;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoNaranja {
+    fill: orange;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoTomate{
-    fill:tomato;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoTomate {
+    fill: tomato;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoKhaki{
-    fill:DarkKhaki;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoKhaki {
+    fill: DarkKhaki;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoMagenta{
-    fill:DarkMagenta;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoMagenta {
+    fill: DarkMagenta;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoDorado{
-    fill:GoldenRod;
-    stroke:black;
-    stroke-width:1px;
+
+.marcadoDorado {
+    fill: GoldenRod;
+    stroke: black;
+    stroke-width: 1px;
 }
-.marcadoNegro{
-    fill:none;
-    stroke:black;
-    stroke-width:3px;
+
+.marcadoNegro {
+    fill: none;
+    stroke: black;
+    stroke-width: 3px;
 }
-.marcadoMaroon{
-    fill:none;
-    stroke:maroon;
-    stroke-width:7px;
+
+.marcadoMaroon {
+    fill: none;
+    stroke: maroon;
+    stroke-width: 7px;
 }
-.marcadoDarkCyan{
-    fill:none;
-    stroke:DarkCyan;
-    stroke-width:7px;
+
+.marcadoDarkCyan {
+    fill: none;
+    stroke: DarkCyan;
+    stroke-width: 7px;
 }
-.diente{
-    fill-opacity:0;
-    stroke:black;
-    stroke-width:1px;
+
+.diente {
+    fill-opacity: 0;
+    stroke: black;
+    stroke-width: 1px;
 }
-.ausente
-{
-    fill:none;
-    opacity: 0;
-}
-.corona
-{
-    fill:none;
-    opacity: 0;
-}
-.endodoncia
-{
-    fill:none;
+
+.ausente {
+    fill: none;
     opacity: 0;
 }
 
-.implante
-{
-    fill:none;
+.corona {
+    fill: none;
     opacity: 0;
 }
-.rotado
-{
-    fill:none;
+
+.endodoncia {
+    fill: none;
     opacity: 0;
 }
-.desgaste
-{
-    fill:none;
+
+.implante {
+    fill: none;
     opacity: 0;
 }
-.coronaDestruida
-{
-    fill:none;
+
+.rotado {
+    fill: none;
     opacity: 0;
 }
-.fracturado
-{
-    fill:none;
+
+.desgaste {
+    fill: none;
     opacity: 0;
 }
-.erupcionado
-{
-    fill:none;
+
+.coronaDestruida {
+    fill: none;
     opacity: 0;
 }
-.obturado
-{
-    fill:none;
+
+.fracturado {
+    fill: none;
     opacity: 0;
 }
-.obturadoResina
-{
-    fill:none;
+
+.erupcionado {
+    fill: none;
     opacity: 0;
 }
+
+.obturado {
+    fill: none;
+    opacity: 0;
+}
+
+.obturadoResina {
+    fill: none;
+    opacity: 0;
+}
+
+table th {
+    text-align: center;
+}
+
 table td {
     text-align: center;
-  }
+    width: 100px;
+}
+
+table tr {
+    text-align: center;
+    width: 100px;
+    vertical-align: middle;
+}

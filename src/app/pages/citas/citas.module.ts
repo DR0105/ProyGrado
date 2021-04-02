@@ -14,9 +14,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { RadioSelectGenericoModule } from '../../shared/components/radio-select-generico/radio-select-generico.module';
 import { ComboGenericoModule } from '../../shared/components/combo-generico/combo-generico.module';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-import { FullCalendarModule } from '@fullcalendar/angular'; 
-import dayGridPlugin from '@fullcalendar/daygrid'; 
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
@@ -31,7 +31,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 
 
 @NgModule({
-  declarations: [ListarCitaComponent, CrearCitaComponent, HorariosComponent, ListarPacienteComponent, HomeComponent, HistoriaClinicaComponent],
+  declarations: [
+    ListarCitaComponent,
+    CrearCitaComponent,
+    HorariosComponent,
+    ListarPacienteComponent,
+    HomeComponent,
+    HistoriaClinicaComponent,
+    OdontogramaComponent],
   imports: [
     CommonModule,
     CitasRoutingModule,
