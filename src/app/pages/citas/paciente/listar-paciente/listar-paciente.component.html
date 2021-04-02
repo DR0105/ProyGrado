@@ -25,7 +25,7 @@
           <th scope="col">Nombre</th>
           <th scope="col">Código</th>
           <th scope="col">Carrera</th>
-          <th scope="col">Telefono</th>
+          <th scope="col">Telfono</th>
           <th scope="col">Historia Clínica</th>
         </tr>
       </thead>
@@ -36,11 +36,11 @@
         <td>{{ carrera }}</td>
         <td>{{ telefono }}</td>
         <td>
-          <button mat-icon-button color="primary" [routerLink]="['/pages/citas/historiaClinica/', codigo]">
-            <mat-icon>assignment_ind</mat-icon> Historia Clínica
+          <button mat-button color="primary" [routerLink]="['/pages/citas/historiaClinica/', codigo]">
+            <mat-icon>assignment_ind</mat-icon>
+            Historia Clínica
           </button>
         </td>
-        <td></td>
       </tbody>
     </table>
   </div>

@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 @Component({
   selector: "ngx-listar-paciente",
   templateUrl: "./listar-paciente.component.html",
-  styleUrls: ["./listar-paciente.component.scss"],
+  styleUrls: ["./listar-paciente.component.css"],
 })
 export class ListarPacienteComponent implements OnInit {
   nombre = "";
