@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { CitasRoutingModule } from './citas-routing.module';
 import { ListarCitaComponent } from './cita/listar-cita/listar-cita.component';
 import { CrearCitaComponent } from './cita/crear-cita/crear-cita.component';
@@ -21,15 +20,18 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { HistoriaClinicaComponent } from './historia-clinica/historia-clinica.component';
-import { OdontogramaComponent } from './odontograma/odontograma.component';
+import { OdontogramaComponent } from './historia-clinica/odontologia/odontograma/odontograma.component';
+import { DatosBasicosComponent } from './historia-clinica/datos-basicos/datos-basicos.component';
+import { MedicinaComponent } from './historia-clinica/medicina/medicina.component';
+import { FisioterapiaComponent } from './historia-clinica/fisioterapia/fisioterapia.component';
+import { OdontologiaComponent } from './historia-clinica/odontologia/odontologia.component';
+import { PsicologiaComponent } from './historia-clinica/psicologia/psicologia.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
   timeGridPlugin,
   listPlugin,
 ]);
-
-
 @NgModule({
   declarations: [
     ListarCitaComponent,
@@ -38,7 +40,13 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ListarPacienteComponent,
     HomeComponent,
     HistoriaClinicaComponent,
-    OdontogramaComponent],
+    OdontogramaComponent,
+    DatosBasicosComponent,
+    MedicinaComponent,
+    FisioterapiaComponent,
+    OdontologiaComponent,
+    PsicologiaComponent,
+  ],
   imports: [
     CommonModule,
     CitasRoutingModule,

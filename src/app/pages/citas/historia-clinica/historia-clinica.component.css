@@ -32,8 +32,7 @@
     display: flex;
     justify-content: center;
 }
-
-subtitulo {
-    font-size: 10rem;
+.subtitulo {
+    font-size: 0.9rem;
     font-weight: bold;
 }

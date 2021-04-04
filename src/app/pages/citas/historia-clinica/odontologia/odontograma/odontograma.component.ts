@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./odontograma.component.css']
 })
 export class OdontogramaComponent implements OnInit {
-
   color: number = 1;
-
   dientesArriba: any[] = [
     { diente: 0, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente:'invisible', rotado:'invisible', desgaste:'invisible', coronaDestruida:'invisible', fracturado:'invisible', erupcionado:'invisible', obturado:'invisible', obturadoResina:'invisible', corona:'invisible', endodoncia:'invisible', implante:'invisible' },
     { diente: 1, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente:'invisible', rotado:'invisible', desgaste:'invisible', coronaDestruida:'invisible', fracturado:'invisible', erupcionado:'invisible', obturado:'invisible', obturadoResina:'invisible', corona:'invisible', endodoncia:'invisible', implante:'invisible' },
@@ -45,10 +43,6 @@ export class OdontogramaComponent implements OnInit {
     { diente: 14, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente:'invisible', rotado:'invisible', desgaste:'invisible', coronaDestruida:'invisible', fracturado:'invisible', erupcionado:'invisible', obturado:'invisible', obturadoResina:'invisible', corona:'invisible', endodoncia:'invisible', implante:'invisible' },
     { diente: 15, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente:'invisible', rotado:'invisible', desgaste:'invisible', coronaDestruida:'invisible', fracturado:'invisible', erupcionado:'invisible', obturado:'invisible', obturadoResina:'invisible', corona:'invisible', endodoncia:'invisible', implante:'invisible' },
   ];
-
-
-
-
   convencionesArriba: any[] = [
     { nombre: 'Normal', color: 'Lavender', estado: 1 },
     { nombre: 'Implante', color: '#CC66CC', estado: 2 },
@@ -841,7 +835,6 @@ export class OdontogramaComponent implements OnInit {
     this.dientesAbajo[diente].obturadoResina = 'invisible';
 
   }
-
 
   ngOnInit(): void {
   }
