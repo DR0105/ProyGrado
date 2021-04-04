@@ -1,9 +1,3 @@
-.desabilitado {
-    fill: black;
-    stroke: black;
-    stroke-width: 1px;
-    opacity: 0.3;
-}
 
 .marcadoAzul {
     fill: none;
@@ -101,57 +95,7 @@
     stroke-width: 1px;
 }
 
-.ausente {
-    fill: none;
-    opacity: 0;
-}
-
-.corona {
-    fill: none;
-    opacity: 0;
-}
-
-.endodoncia {
-    fill: none;
-    opacity: 0;
-}
-
-.implante {
-    fill: none;
-    opacity: 0;
-}
-
-.rotado {
-    fill: none;
-    opacity: 0;
-}
-
-.desgaste {
-    fill: none;
-    opacity: 0;
-}
-
-.coronaDestruida {
-    fill: none;
-    opacity: 0;
-}
-
-.fracturado {
-    fill: none;
-    opacity: 0;
-}
-
-.erupcionado {
-    fill: none;
-    opacity: 0;
-}
-
-.obturado {
-    fill: none;
-    opacity: 0;
-}
-
-.obturadoResina {
+.invisible {
     fill: none;
     opacity: 0;
 }
