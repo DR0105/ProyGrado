@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 @Component({
   selector: 'ngx-psicologia',
   templateUrl: './psicologia.component.html',
-  styles: []
+  styleUrls: ['../historia-clinica.component.css']
 })
 export class PsicologiaComponent implements OnInit {
   nuevaEvolucionPsico: FormControl = this.fb.control('', Validators.required);
