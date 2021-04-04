@@ -1,13 +1,12 @@
 <div class="home-div">
-
-    <mat-card class="home-card center">
-        <mat-card-header>
-            <h3> Modulos SIBUD</h3>
-        </mat-card-header>
-        <mat-card-content class="center">
-            <button mat-raised-button color="primary" (click)="navigateReliquidacion()">Reliquidación</button><br> <br>
-            <button mat-raised-button color="primary" (click)="navigateApoyoAlimentario()">Apoyo Alimentario</button><br> <br>
-            <button mat-raised-button color="primary" (click)="navigateSalud()">Salud</button><br> <br>
-        </mat-card-content>
-    </mat-card>
+    <div class="card text-center">
+        <div class="card-body">
+            <div class="d-grid gap-2 justify-content-center">
+                <h4 class="card-title"> Módulos SIBUD</h4>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2"(click)="navigateReliquidacion()">Reliquidación</button>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2"(click)="navigateApoyoAlimentario()">Apoyo Alimentario</button>
+                <button type="button" class="btn btn-primary mt-2 me-2 ms-2"(click)="navigateSalud()">Salud</button>
+            </div>
+        </div>
+    </div>
 </div>
