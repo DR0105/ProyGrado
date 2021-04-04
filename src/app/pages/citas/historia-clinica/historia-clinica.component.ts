@@ -147,6 +147,21 @@ export class HistoriaClinicaComponent implements OnInit {
     observaciones: ['', Validators.required],
     ultimaVisitaOdontologo: ['', Validators.required],
     evaluacionEstadoFinal: ['', Validators.required],
+    indiceActualVestabular: ['', Validators.required],
+    indiceAnteriorVestabular: ['', Validators.required],
+    fechaPlacaVestabular: ['', Validators.required],
+    indiceActualVestibular: ['', Validators.required],
+    indiceAnteriorVestibular: ['', Validators.required],
+    fechaPlacaVestibular: ['', Validators.required],
+    observacionesVestibular: ['', Validators.required],
+    diagnosticoOdonto: ['', Validators.required],
+    pronosticoOdonto: ['', Validators.required],
+    tp: ['', Validators.required],
+    tpt: ['', Validators.required],
+    coagulacion: ['', Validators.required],
+    sangria: ['', Validators.required],
+    otra: ['', Validators.required],
+    evolucionOdonto: this.fb.array([]),
 
   })
   // Psicología
@@ -157,7 +172,7 @@ export class HistoriaClinicaComponent implements OnInit {
     claros: ['', Validators.required],
     rigidos: ['', Validators.required],
     actualesFamiliares: ['', Validators.required],
-    pasadosFamiliares:  ['', Validators.required],
+    pasadosFamiliares: ['', Validators.required],
     actualesPersonales: ['', Validators.required],
     pasadosPersonales: ['', Validators.required],
     figurasDeAutoridad: ['', Validators.required],
@@ -203,7 +218,7 @@ export class HistoriaClinicaComponent implements OnInit {
     return this.psicologiaForm.get('evolucionPsico') as FormArray;
   }
   get evolucionOdontoArr() {
-    return this.psicologiaForm.get('evolucionOdonto') as FormArray;
+    return this.odontologiaForm.get('evolucionOdonto') as FormArray;
   }
   agregarAnalisis() {
     if (this.nuevoAnalisis.invalid) {
@@ -234,7 +249,7 @@ export class HistoriaClinicaComponent implements OnInit {
     this.nuevaEvolucionPsico.reset();
   }
   agregarEvolucionOdonto() {
-    if (this.nuevaEvolucionPsico.invalid) {
+    if (this.nuevaEvolucionOdonto.invalid) {
       return
     }
     this.evolucionOdontoArr.push(new FormControl(this.nuevaEvolucionOdonto.value, Validators.required));

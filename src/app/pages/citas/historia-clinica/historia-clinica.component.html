@@ -274,16 +274,18 @@
               <input type="text" class="form-control" id="fup" formControlName="fup" />
             </div>
           </div>
-          <div class="row">
-            <div class="col md- mb-3 me-4 mt-2 mb-4">
-              <label for="fuccv" class="form-label">Fecha Última CCV</label>
-              <input type="text" class="form-control" id="fuccv" formControlName="fuccv" />
+          <div class="row me-4">
+            <div class="col mb-3 me-4 mb-4">
+              <label for="example-date-input" class="col col-form-label">Fecha última CCV</label>
+              <input class="form-control" formControlName="fuccv" type="date" value="2020-04-14"
+                id="example-date-input">
               <label for="resultadoccv" class="form-label">Resultado</label>
               <input type="text" class="form-control" id="resultadoccv" formControlName="resultadoccv" />
             </div>
-            <div class="col md- mb-3 me-4 mt-2 mb-4">
-              <label for="examenSeno" class="form-label">Examen de Seno</label>
-              <input type="text" class="form-control" id="examenSeno" formControlName="examenSeno" />
+            <div class="col mb-3 me-4 mb-4">
+              <label for="example-date-input" class="col col-form-label">Examen de Seno</label>
+              <input class="form-control" formControlName="examenSeno" type="date" value="2020-04-14"
+                id="example-date-input">
               <label for="resultadoSeno" class="form-label">Resultado</label>
               <input type="text" class="form-control" id="resultadoSeno" formControlName="resultadoSeno" />
             </div>
@@ -997,19 +999,19 @@
         <div class="row mt-2">
           <strong>Signos vitales</strong>
           <div class="row">
-            <div class="col md-3 mb-3 me-4 mt-2">
+            <div class="col mb-3 me-4 mt-2">
               <label for="temperatura" class="form-label"><strong>Temperatura</strong></label>
               <input type="text" class="form-control" id="temperatura" formControlName="temperatura" />
             </div>
-            <div class="col md- mb-3 me-4 mt-2">
+            <div class="col mb-3 me-4 mt-2">
               <label for="pulso" class="form-label"><strong>Pulso</strong></label>
               <input type="text" class="form-control" id="pulso" formControlName="pulso" />
             </div>
-            <div class="col md- mb-3 me-4 mt-2">
+            <div class="col mb-3 me-4 mt-2">
               <label for="tensionArterial" class="form-label"><strong>Tensión Aterial</strong></label>
               <input type="text" class="form-control" id="tensionArterial" formControlName="tensionArterial" />
             </div>
-            <div class="col md- mb-3 me-4 mt-2">
+            <div class="col mb-3 me-4 mt-2">
               <label for="respiracion" class="form-label"><strong>Respiración</strong></label>
               <input type="text" class="form-control" id="respiracion" formControlName="respiracion" />
             </div>
@@ -1092,7 +1094,7 @@
                   <label class="form-check-label">Normal</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" formControlName="pisoBoca"  value="Anormal" />
+                  <input class="form-check-input" type="radio" formControlName="pisoBoca" value="Anormal" />
                   <label class="form-check-label">Anormal</label>
                 </div>
               </div>
@@ -1232,10 +1234,10 @@
           </div>
         </div>
         <h6 class="titulo mt-2">Examen dental</h6>
+
         <div class="row mt-2">
           <div class="col-md-4">
           </div>
-
           <div class="col me-4 ">
             <div class="col-auto">
               <div class="col me-4 mt-2 mb-2">
@@ -1333,7 +1335,7 @@
               <label for="observaciones"> Observaciones</label>
             </div>
           </div>
-          <div class="col-md-3 ms-2 mt-2 mb-2">
+          <div class="col ms-2 mt-2 mb-2 me-4">
             <div class="form-floating">
               <textarea class="form-control textArea-mid" formControlName="ultimaVisitaOdontologo"
                 placeholder="Última visita al odontólogo" id="ultimaVisitaOdontologo"></textarea>
@@ -1343,21 +1345,205 @@
         </div>
 
 
-        <div class="row mt-2 titulo">
-          <h6>Evaluación del estado final</h6>
+        <div class="row mt-2">
+          <h6 class="titulo">Evaluación del estado final</h6>
           <div class="col  mt-2 me-4 mb-2">
             <div class="form-floating">
               <textarea class="form-control textArea-mid" formControlName="evaluacionEstadoFinal"
                 placeholder="Observaciones" id="evaluacionEstadoFinal"></textarea>
               <label for="evaluacionEstadoFinal"> Observaciones</label>
             </div>
-
+          </div>
+        </div>
+        <hr>
+        <h6 class="titulo mt-2">Control de Placa</h6>
+        <p class="titulo subtitulo">Vestabular</p>
+        <div class="row">
+          <div class="col mb-3 me-4 mt-2">
+            <label for="indiceActualVestabular" class="form-label"><strong>Índice Actual</strong></label>
+            <input type="text" class="form-control" id="indiceActualVestabular"
+              formControlName="indiceActualVestabular" />
+          </div>
+          <div class="col mb-3 me-4 mt-2">
+            <label for="indiceAnteriorVestabular" class="form-label"><strong>Índice Anterior</strong></label>
+            <input type="text" class="form-control" id="indiceAnteriorVestabular"
+              formControlName="indiceAnteriorVestabular" />
+          </div>
+          <div class="col">
+            <div class="form-group row">
+              <label for="fechaPlacaVestabular" class="col-2 col-form-label"><strong>Fecha</strong></label>
+              <div class="col-10">
+                <input class="form-control" formControlName="fechaPlacaVestabular" type="date" value="2020-04-14"
+                  id="fechaPlacaVestabular">
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h6 class="titulo mt-2">Control de Placa</h6>
+        <p class="titulo subtitulo">Vestibular</p>
+        <div class="row">
+          <div class="col mb-3 me-4 mt-2">
+            <label for="indiceActualVeitabular" class="form-label"><strong>Índice Actual</strong></label>
+            <input type="text" class="form-control" id="indiceActualVestabular"
+              formControlName="indiceActualVestabular" />
+          </div>
+          <div class="col mb-3 me-4 mt-2">
+            <label for="indiceAnteriorVestabular" class="form-label"><strong>Índice Anterior</strong></label>
+            <input type="text" class="form-control" id="indiceAnteriorVestabular"
+              formControlName="indiceAnteriorVestabular" />
+          </div>
+          <div class="col">
+            <div class="form-groip row">
+              <label for="fechaPlacaVestabular" class="col-2 col-form-label"><strong>Fecha</strong></label>
+              <div class="col-10">
+                <input class="form-control" formControlName="fechaPlacaVestabular" type="date" value="2020-04-14"
+                  id="fechaPlacaVestibular">
+              </div>
+            </div>
           </div>
         </div>
 
         <hr>
-        <h6 class="titulo">Odontograma</h6>
+        <h6 class="titulo mt-2">Odontograma</h6>
         <ngx-odontograma></ngx-odontograma>
+        <hr>
+        <h6 class="titulo mt-2">Vestibular</h6>
+        <div class="row">
+          <div class="col  mt-2 me-4 mb-2">
+            <div class="form-floating">
+              <textarea class="form-control textArea-mid" formControlName="observacionesVestibular"
+                placeholder="Observaciones" id="observacionesVestibular"></textarea>
+              <label for="observacionesVestibular"> Observaciones</label>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h6 class="titulo mt-2">Exámenes Complementarios</h6>
+        <p class="titulo subtitulo">Examen Radiográfico</p>
+        <div class="row mt-2">
+          <div class="col-md-3">
+          </div>
+          <div class="col me-4 ">
+            <div class="col-auto">
+              <div class="col mt-2 mb-2">
+                <div class="row g-3 align-items-center">
+                  <div class="col-2">
+                    <label class="col-form-label">Periapical</label>
+                  </div>
+                  <div class="col-auto me-2 ms-2">
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="col-auto me-2 ms-2">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-2">
+                  <label class="col-form-label">Panorámica</label>
+                </div>
+                <div class="col-auto me-2 ms-2">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-auto me-2 ms-2">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-2">
+                  <label class="col-form-label">Otra</label>
+                </div>
+                <div class="col-auto me-2 ms-2">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-auto me-2 ms-2">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-2">
+                  <label class="col-form-label">Exámenes de Laboratorio</label>
+                </div>
+                <div class="col-auto me-2 ms-2">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-auto me-2 ms-2">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" row">
+          <div class="col md-3 mb-3 me-4 mt-4">
+            <label for="tp" class="form-label">TP</label>
+            <input type="text" class="form-control" id="tp" formControlName="tp" />
+          </div>
+          <div class="col md-3 mb-3 me-4 mt-4">
+            <label for="tpt" class="form-label">TPT</label>
+            <input type="text" class="form-control" id="tpt" formControlName="tpt" />
+          </div>
+          <div class="col md-3 mb-3 me-4 mt-4">
+            <label for="coagulacion" class="form-label">Coagulación</label>
+            <input type="text" class="form-control" id="coagulacion" formControlName="coagulacion" />
+          </div>
+          <div class="col md-3 mb-3 me-4 mt-4">
+            <label for="sangria" class="form-label">Sangría</label>
+            <input type="text" class="form-control" id="sangria" formControlName="sangria" />
+          </div>
+          <div class="col md-3 mb-3 me-4 mt-4">
+            <label for="otra" class="form-label">Otra</label>
+            <input type="text" class="form-control" id="otra" formControlName="otra" />
+          </div>
+        </div>
+        <hr>
+        <h6 class="titulo mt-2">Diagnóstico y Pronóstico</h6>
+        <div class="row">
+          <div class="col  mt-2 me-4 mb-2">
+            <div class="row">
+              <div class="col md-6 me-4 mt-2 mb-4">
+                <div class="form-floating">
+                  <textarea class="form-control textArea-mid" formControlName="diagnosticoOdonto"
+                    placeholder="Diagnóstico" id="diagnostico"></textarea>
+                  <label for="diagnostico"><strong> Diagnóstico</strong></label>
+                </div>
+              </div>
+              <div class="col md-6 me-2 mt-2  mb-4">
+                <div class="form-floating">
+                  <textarea class="form-control textArea-mid" formControlName="pronosticoOdonto"
+                    placeholder="Pronóstico" id="pronostico"></textarea>
+                  <label for="pronostico"><strong> Pronóstico</strong></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h6 class="titulo mt-2">Evolución y Tratamiento</h6>
+        <div class="row mt-4 mb-4">
+          <div class="col md-6 me-4 mb-4">
+            <div class="input-group">
+              <input type="text" class="form-control" (keyup.enter)="agregarEvolucionOdonto()"
+                name="nuevaEvolucionOdonto" placeholder="Agregar" [formControl]="nuevaEvolucionOdonto" />
+              <button class="btn btn-outline-primary" type="button" (click)="agregarEvolucionOdonto()">
+                Agregar
+              </button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col md-6 me-4 mb-4" formArrayName="evolucionOdonto">
+              <div class="input-group mb-1" *ngFor="let evolucion of evolucionOdontoArr.controls; let i = index">
+                <input class="form-control" *ngIf="evolucionOdontoArr.length > 0" [formControlName]="i" />
+                <button class="btn btn-outline-danger" type="button" (click)="borrarEvolucionOdonto(i)">
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <div class="row mt-4">
           <div class="col titulo">
             <label><strong>Realizó: </strong>{{ pruebaEspecialista.nombre | ngxCapitalize }}</label>

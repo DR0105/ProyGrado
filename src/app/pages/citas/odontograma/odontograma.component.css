@@ -118,3 +118,8 @@ table tr {
     display: flex;
     justify-content: center;
 }
+svg|a text {
+    fill: blue; /* Incluso para el texto, SVG usa fill para el color */
+    text-decoration: underline;
+  }
+  
