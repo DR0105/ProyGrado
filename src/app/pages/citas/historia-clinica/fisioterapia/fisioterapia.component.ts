@@ -47,6 +47,5 @@ export class FisioterapiaComponent implements OnInit {
 
     }
     this.toastr.success('Ahora conecta todos los servicios xD', '¡Funciona!');
-    console.log(historiaFisio);
   }
 }
