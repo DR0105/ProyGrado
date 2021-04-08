@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'ngx-psicologia',
   templateUrl: './psicologia.component.html',
@@ -38,7 +39,7 @@ export class PsicologiaComponent implements OnInit {
     nombre: 'NOMBRE1 APELLIDO1',
     especialidad: 'ESPECIALIDAD 1',
   }
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private toastr: ToastrService) { }
   ngOnInit() {
   }
   get evolucionPsicoArr() {
