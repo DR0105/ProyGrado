@@ -16,6 +16,7 @@ import { ApoyoAlimentarioComponent } from './apoyo-alimentario/apoyo-alimentario
 import { ApoyoAlimentarioModule } from './apoyo-alimentario/apoyo-alimentario.module';
 import { MatFormFieldModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -35,6 +36,7 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MiscellaneousModule,
     NbSpinnerModule,
     NgxMaterialTimepickerModule,
+    // ToastrModule.forRoot(),
   ],
   declarations: [
     PagesComponent,

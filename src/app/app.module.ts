@@ -79,10 +79,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import LocaleEs from "@angular/common/locales/es-CO";
 import { registerLocaleData } from "@angular/common";
-import { FullCalendarModule } from '@fullcalendar/angular'; 
-import dayGridPlugin from '@fullcalendar/daygrid'; 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { ToastrModule } from 'ngx-toastr';
 //import interactionPlugin from '@fullcalendar/interaction';
-FullCalendarModule.registerPlugins([ 
+FullCalendarModule.registerPlugins([
   dayGridPlugin,
   //interactionPlugin
 ]);
@@ -144,7 +145,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [BrowserAnimationsModule,
     NgxMaterialTimepickerModule,
-    FullCalendarModule],
+    FullCalendarModule,
+    ],
+
 })
 export class MaterialModule { }
 
@@ -158,15 +161,14 @@ export class MaterialModule { }
     AppRoutingModule,
     NgbModule,
     NbEvaIconsModule,
-
     ThemeModule.forRoot(),
-
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
+    ToastrModule.forRoot(),
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),

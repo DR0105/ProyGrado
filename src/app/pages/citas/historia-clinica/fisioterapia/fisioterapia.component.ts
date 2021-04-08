@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'ngx-fisioterapia',
   templateUrl: './fisioterapia.component.html',
@@ -8,16 +10,16 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class FisioterapiaComponent implements OnInit {
   nuevaEvolucionFisio: FormControl = this.fb.control('', Validators.required);
   fisioterapiaForm: FormGroup = this.fb.group({
-    motivoConsultaFisio: ['', Validators.required],
-    valoracion: ['', Validators.required],
-    planDeManejoFisio: ['', Validators.required],
+    motivoConsultaFisio: [null, Validators.required],
+    valoracion: [null, Validators.required],
+    planDeManejoFisio: [null, Validators.required],
     evolucionFisio: this.fb.array([]),
   })
   pruebaEspecialista = {
     nombre: 'NOMBRE1 APELLIDO1',
     especialidad: 'ESPECIALIDAD 1',
   }
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private toastr: ToastrService) { }
   ngOnInit() {
   }
   get evolucionFisioArr() {
@@ -35,5 +37,16 @@ export class FisioterapiaComponent implements OnInit {
   }
   buscarEspecialista() {
     // TODO
+  }
+  guardarHistoriaFisioterapia() {
+    const historiaFisio: any = {
+      motivoConsulta: this.fisioterapiaForm.get('motivoConsultaFisio').value,
+      valoracion: this.fisioterapiaForm.get('valoracion').value,
+      planDeManejo: this.fisioterapiaForm.get('planDeManejoFisio').value,
+      evolucion: this.fisioterapiaForm.get('evolucionFisio').value,
+
+    }
+    this.toastr.success('Ahora conecta todos los servicios xD', '¡Funciona!');
+    console.log(historiaFisio);
   }
 }
