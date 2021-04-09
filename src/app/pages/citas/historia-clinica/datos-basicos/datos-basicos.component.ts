@@ -159,8 +159,7 @@ export class DatosBasicosComponent implements OnInit {
             }, (error) => {
               console.log(error);
             })
-          
-          
+                  
           
           this.request.get(environment.TERCEROS_SERVICE, `vinculacion/?query=Activo:true,TerceroPrincipalId.Id:${!!this.tercero ? this.tercero.Id ? this.tercero.Id : '' : ''}`)
             .subscribe((datosInfoVinculaciones: any) => {

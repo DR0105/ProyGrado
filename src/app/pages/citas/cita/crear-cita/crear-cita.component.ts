@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EstudiantesService } from '../../../../shared/services/estudiantes.service';
-//import { ToastrService } from 'ngx-toastr';
-//import { CitasService } from 'src/app/services/citas.service';
-//import { UsuariosService } from '../../../services/usuarios.service';
-//import { EmpleadoService } from '../../../services/empleados.service';
-//import { TipoCitaService } from '../../../services/tipo-cita.service';
 
 @Component({
   selector: 'ngx-crear-cita',
