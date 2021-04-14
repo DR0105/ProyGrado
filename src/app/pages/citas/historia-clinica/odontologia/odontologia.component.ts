@@ -108,7 +108,7 @@ export class OdontologiaComponent implements OnInit {
   buscarEspecialista() {
     // TODO
   }
-  guardarHistoriaMedicina() {
+  guardarHistoriaOdontologia() {
     const historiaOdontologia: any = {
       motivoConsultaOdonto: this.odontologiaForm.get('motivoConsultaOdonto').value,
       tratamientoMedico: this.odontologiaForm.get('tratamientoMedico').value,

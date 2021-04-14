@@ -1,5 +1,18 @@
 #calendar {
-    max-width: 900px;
-    margin: 40px auto;
-    background-color: gray;
-  }
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: white;
+  color: black;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.portlet.calendar .fc-event .fc-time {
+  color: white;
+}
+
+.portlet.calendar .fc-event .fc-title {
+  color: white;
+}

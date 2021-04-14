@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
 import esLocale from '@fullcalendar/core/locales/es';
+const fechaHoy = new Date().toISOString(); // YYYY-MM-DDT:HH:mm
+// const fechaHoy = new Date().toISOString().replace(/T.*$/, ''); 
+
+
 
 
 @Component({
@@ -8,16 +12,17 @@ import esLocale from '@fullcalendar/core/locales/es';
   templateUrl: './horarios.component.html',
   styleUrls: ['./horarios.component.scss']
 })
+
 export class HorariosComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit() {
+    console.log(fechaHoy);
   }
   calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
+    initialView: 'timeGridDay',
+    themeSystem: 'bootstrap',
     headerToolbar: {
-      left: 'prev,next,today',
+      left: 'prev,today,next',
       center: 'title',
       right: 'timeGridDay,timeGridWeek,dayGridMonth,listWeek'
     },
@@ -28,17 +33,34 @@ export class HorariosComponent implements OnInit {
       omitZeroMinute: false,
       meridiem: 'short'
     },
+    businessHours: {
+      start: '08:00:00',
+      end: '17:00:00',
+      dow: [1, 2, 3, 4, 5]
+    },
     navLinks: true,
     editable: true,
     slotMinTime: '08:00:00',
-    slotMaxTime: '16:00:00',
-    slotDuration: '00:15:00',
-    slotLabelInterval: 15,
+    slotMaxTime: '17:00:00',
+    slotDuration: '00:30:00',
+    slotLabelInterval: 30,
     snapDuration: '00:30:00',
     events: [
-      { title: 'Cita psicología', date: '2021-03-15' },
-      { title: 'Cita odontología', date: '2021-03-16' }
+      { title: 'Bryan Alejandro luis', date: '2021-04-14T13:30:00' },
+      { title: 'Diego Romero', date: '2021-04-14T15:30:00' },
+      { title: 'Diego Romero', date: '2021-04-13T15:30:00' },
+      { title: 'Bryan Alejandro luis', date: '2021-04-15T13:30:00' },
+      { title: 'Andrés Castro', date: `${fechaHoy}` }
     ],
   };
+  cargarCitas() {
+    // this.citasService.getCitas().subscribe((cita): any => {
+    //   cita.fecha = new Date().toISOString();
+    //   this.calendarOptions.events = [{
+    //     title: cita.paciente,
+    //     date: cita.fecha,
+    //   }]
+    // });
 
+  }
 }
