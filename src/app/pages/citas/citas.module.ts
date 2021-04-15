@@ -26,6 +26,7 @@ import { MedicinaComponent } from './historia-clinica/medicina/medicina.componen
 import { FisioterapiaComponent } from './historia-clinica/fisioterapia/fisioterapia.component';
 import { OdontologiaComponent } from './historia-clinica/odontologia/odontologia.component';
 import { PsicologiaComponent } from './historia-clinica/psicologia/psicologia.component';
+import { PacienteCitaComponent } from './paciente/paciente-cita/paciente-cita.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
@@ -46,6 +47,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FisioterapiaComponent,
     OdontologiaComponent,
     PsicologiaComponent,
+    PacienteCitaComponent,
   ],
   imports: [
     CommonModule,

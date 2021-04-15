@@ -12,6 +12,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { HistoriaClinicaComponent } from "./historia-clinica/historia-clinica.component";
+import { PacienteCitaComponent } from "./paciente/paciente-cita/paciente-cita.component";
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: "horarios", component: HorariosComponent },
       { path: "listarPaciente", component: ListarPacienteComponent },
       { path: "historiaClinica", component: HistoriaClinicaComponent },
+      {path: "citaPaciente", component: PacienteCitaComponent},
       { path: "", component: HomeComponent },
       { path: "**", redirectTo: "" },
     ],

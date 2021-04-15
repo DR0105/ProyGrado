@@ -13,26 +13,30 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  navigateListarCita(){
+  navigateListarCita() {
     this.router.navigate(['/pages/citas/listarCita']);
     return false;
   }
 
-  navigateCrearCita(){
+  navigateCrearCita() {
     this.router.navigate(['/pages/citas/crearCita']);
     return false;
   }
 
-  navigateHorarios(){
+  navigateHorarios() {
     this.router.navigate(['/pages/citas/horarios']);
     return false;
   }
-  navigateListarPaciente(){
+  navigateListarPaciente() {
     this.router.navigate(['/pages/citas/listarPaciente']);
     return false;
   }
-  navigateHistoriaClinica(){
+  navigateHistoriaClinica() {
     this.router.navigate(['/pages/citas/historiaClinica']);
+    return false;
+  }
+  navigateCitaPaciente() {
+    this.router.navigate(['/pages/citas/citaPaciente']);
     return false;
   }
 }
