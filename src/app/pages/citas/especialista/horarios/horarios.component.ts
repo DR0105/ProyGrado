@@ -10,7 +10,7 @@ const fechaHoy = new Date().toISOString(); // YYYY-MM-DDT:HH:mm
 @Component({
   selector: 'ngx-horarios',
   templateUrl: './horarios.component.html',
-  styleUrls: ['./horarios.component.scss']
+  styleUrls: ['./horarios.component.css']
 })
 
 export class HorariosComponent implements OnInit {
@@ -20,7 +20,9 @@ export class HorariosComponent implements OnInit {
   }
   calendarOptions: CalendarOptions = {
     initialView: 'timeGridDay',
-    themeSystem: 'bootstrap',
+    // themeSystem: 'bootstrap',
+    weekends: false,
+    aspectRatio: 1.8,
     headerToolbar: {
       left: 'prev,today,next',
       center: 'title',
@@ -61,6 +63,6 @@ export class HorariosComponent implements OnInit {
     //     date: cita.fecha,
     //   }]
     // });
-
   }
+
 }

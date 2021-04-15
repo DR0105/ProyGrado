@@ -1,16 +1,11 @@
 <div class="container pt-4">
   <div class="row">
-    <div class="col-lg-6 offset-lg-3">
+    <div class="col-lg-7 col-md-7 offset-lg-3">
       <div class="card text-center">
         <div class="card-body">
           <h3>
             {{ titulo }}
-            <!-- <div *ngIf="loading" class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div> -->
           </h3>
-          <span *ngIf="submit && crearCita.invalid" class="badge rounded-pill bg-danger">*TODOS LOS CAMPOS SON
-            OBLIGATORIOS*</span>
           <form [formGroup]="crearCita" (ngSubmit)="agregarCita()">
             <div class="row">
               <div class="col col-sm-12">
@@ -18,14 +13,14 @@
                   <mat-label>Código</mat-label>
                   <input matInput placeholder="Código estudiante" type="text" formControlName="codigo" />
                 </mat-form-field>
-                <button mat-icon-button color="primary" (click)="buscarPaciente()">
+                <button mat-icon-button color="primary" type="button" (click)="buscarPaciente()">
                   <mat-icon>search</mat-icon>
                 </button>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-8 me-2 ms-2">
-                <mat-form-field appearance="outline" class="select-group" [style.width.px]=555>
+              <div class="col  col-md-12 col-lg-12 col-sm-12">
+                <mat-form-field appearance="outline" class="select-group" [style.width.px]=500>
                   <mat-label>Paciente</mat-label>
                   <input matInput [value]="nombre" formControlName="nombre" readonly>
                   <mat-error>Campo obligatorio</mat-error>
