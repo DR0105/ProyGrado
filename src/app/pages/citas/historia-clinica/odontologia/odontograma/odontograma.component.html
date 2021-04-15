@@ -75,7 +75,7 @@
         </thead>
         <tbody>
             <td *ngFor="let colores of convencionesAbajo">
-                <button (click)="tipoDiente(colores.estado)" class="btn color"
+                <button (click)="tipoDiente(colores.estado)" type="button" class="btn color"
                     [ngStyle]="{'background-color': colores.color,'width':'20px','height':'20px'}">
                 </button>
             </td>
