@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { EstudiantesService } from '../../../../shared/services/estudiantes.service';
 @Component({
   selector: 'ngx-datos-basicos',
   templateUrl: './datos-basicos.component.html',
@@ -7,12 +9,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class DatosBasicosComponent implements OnInit {
   edad: number;
+  codigo!: string;
   datosBasicos: FormGroup = this.fb.group({
     vinculacion: ['', Validators.required],
     tipo: ['', Validators.required],
     situacionAcademica: ['', Validators.required],
   })
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private estudianteService: EstudiantesService,private aRoute: ActivatedRoute) { }
   public calcularEdad(fechaNaciemientoStr: string): number {
     if (fechaNaciemientoStr) {
       const actual = new Date();
@@ -27,5 +30,13 @@ export class DatosBasicosComponent implements OnInit {
       return null;
     }
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.codigo=this.aRoute.snapshot.paramMap.get('codigo');
+    console.log(this.codigo);
+    this.estudianteService.getInfoPorCodigo(this.codigo).subscribe((data)=>{
+      console.log(data);
+    });
+    
+   }
+
 }

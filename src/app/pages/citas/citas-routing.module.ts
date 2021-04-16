@@ -28,7 +28,7 @@ const routes: Routes = [
       { path: "crearCita", component: CrearCitaComponent },
       { path: "horarios", component: HorariosComponent },
       { path: "listarPaciente", component: ListarPacienteComponent },
-      { path: "historiaClinica", component: HistoriaClinicaComponent },
+      { path: "historiaClinica/:codigo", component: HistoriaClinicaComponent },
       {path: "citaPaciente", component: PacienteCitaComponent},
       { path: "", component: HomeComponent },
       { path: "**", redirectTo: "" },

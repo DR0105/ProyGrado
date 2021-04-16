@@ -9,18 +9,23 @@ const opciones = {
     'Authorization': `Bearer ${window.localStorage.getItem('access_token')}`,
   })
 }
-const baseUrl = environment.ACADEMICA_JBPM_SERVICE;
+const estudianteUrl = environment.ACADEMICA_JBPM_SERVICE;
+const infoUrl = environment.TERCEROS_SERVICE;
 @Injectable({
   providedIn: 'root'
 })
 export class EstudiantesService {
+  codigo:string;
 
   constructor(private http: HttpClient) { }
   getEstudiante(codigo) {
-    return this.http.get(baseUrl + 'datos_basicos_estudiante/' + codigo, opciones);
+    return this.http.get(estudianteUrl + 'datos_basicos_estudiante/' + codigo, opciones);
   }
   getProyecto(codigop) {
-    return this.http.get(baseUrl + 'carrera/' + codigop, opciones);
+    return this.http.get(estudianteUrl + 'carrera/' + codigop, opciones);
+  }
+  getInfoPorCodigo(codigo) {
+    return this.http.get(infoUrl + 'datos_identificacion/?query=TipoDocumentoId:14,Numero:' + codigo, opciones);
   }
 
 }
