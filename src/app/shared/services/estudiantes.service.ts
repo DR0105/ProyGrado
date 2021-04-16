@@ -11,6 +11,7 @@ const opciones = {
 }
 const estudianteUrl = environment.ACADEMICA_JBPM_SERVICE;
 const infoUrl = environment.TERCEROS_SERVICE;
+const consultaInfo = 'datos_identificacion/?query=TipoDocumentoId:14,Numero:';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,7 @@ export class EstudiantesService {
     return this.http.get(estudianteUrl + 'carrera/' + codigop, opciones);
   }
   getInfoPorCodigo(codigo) {
-    return this.http.get(infoUrl + 'datos_identificacion/?query=TipoDocumentoId:14,Numero:' + codigo, opciones);
+    return this.http.get(infoUrl + consultaInfo + codigo, opciones);
   }
 
 }
