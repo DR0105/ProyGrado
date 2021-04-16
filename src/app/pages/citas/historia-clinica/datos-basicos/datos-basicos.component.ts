@@ -14,20 +14,17 @@ export class DatosBasicosComponent implements OnInit {
   carrera = "";
   estado = "";
   telefono = "";
+  genero = "";
   codigo!: string;
-  fechaNacimiento:Date;
+  fechaNacimiento: Date;
   lugarNacimiento = "";
+  terceroId: number;
   datosBasicos: FormGroup = this.fb.group({
     vinculacion: ['', Validators.required],
     tipo: ['', Validators.required],
     situacionAcademica: ['', Validators.required],
   })
   constructor(private fb: FormBuilder, private estudianteService: EstudiantesService, private aRoute: ActivatedRoute) { }
-  // public corregirFecha(){
-  //   let fechaHora = new Date(this.fechaNacimiento);
-  //   fechaHora.setHours(fechaHora.getHours() + 5);
-  //   return fechaHora;
-  // }
   public calcularEdad(fechaNacimiento): number {
     if (this.fechaNacimiento) {
       const actual = new Date();
@@ -49,18 +46,22 @@ export class DatosBasicosComponent implements OnInit {
   }
   cargarDatos() {
     this.estudianteService.getInfoPorCodigo(this.codigo).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.fechaNacimiento = data[0].TerceroId.FechaNacimiento;
-      this.edad= this.calcularEdad(this.fechaNacimiento);
+      this.edad = this.calcularEdad(this.fechaNacimiento);
       // console.log(this.fechaNacimiento);
       this.nombre = data[0].TerceroId.NombreCompleto;
       this.lugarNacimiento = data[0].TerceroId.LugarOrigen;
-
+      this.terceroId = data[0].TerceroId.Id;
+      // console.log(this.terceroId);
+      this.estudianteService.getInfoComplementaria(this.terceroId).subscribe((data) => {
+        this.genero = data[0].InfoComplementariaId.Nombre;
+      })
     });
+
     this.estudianteService
       .getEstudiante(this.codigo)
       .subscribe((data: any) => {
-        //  console.log(data);
         var paciente = data.datosEstudianteCollection.datosBasicosEstudiante[0];
         this.codigo = paciente.codigo;
         this.estado = paciente.estado;
@@ -68,7 +69,6 @@ export class DatosBasicosComponent implements OnInit {
           .getProyecto(paciente.carrera)
           .subscribe((data: any) => {
             this.carrera = data.carrerasCollection.carrera[0].nombre;
-            // console.log(data);
           });
       });
   }

@@ -12,11 +12,13 @@ const opciones = {
 const estudianteUrl = environment.ACADEMICA_JBPM_SERVICE;
 const infoUrl = environment.TERCEROS_SERVICE;
 const consultaInfo = 'datos_identificacion/?query=TipoDocumentoId:14,Numero:';
+const infoComplementaria = 'info_complementaria_tercero/?query=TerceroId.Id:';
+const genero = ',InfoComplementariaId.GrupoInfoComplementariaId.Id:6';
 @Injectable({
   providedIn: 'root'
 })
 export class EstudiantesService {
-  codigo:string;
+  codigo: string;
 
   constructor(private http: HttpClient) { }
   getEstudiante(codigo) {
@@ -28,5 +30,7 @@ export class EstudiantesService {
   getInfoPorCodigo(codigo) {
     return this.http.get(infoUrl + consultaInfo + codigo, opciones);
   }
-
+  getInfoComplementaria(terceroId) {
+    return this.http.get(infoUrl + infoComplementaria + terceroId + genero, opciones);
+  }
 }
