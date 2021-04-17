@@ -33,7 +33,7 @@
         <td>{{ estado }}</td>
         <td>{{ nombre }}</td>
         <td>{{ codigo }}</td>
-        <td>{{ carrera }}</td>
+        <td>{{ carrera|ngxCapitalize }}</td>
         <td>{{ telefono }}</td>
         <td>
           <button mat-button color="primary" [routerLink]="['/pages/citas/historiaClinica/', codigo]">
