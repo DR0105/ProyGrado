@@ -15,7 +15,7 @@ export class ListarPacienteComponent implements OnInit {
   codigo = "";
   estado = "";
   telefono = "";
-
+  terceroId = "";
   constructor(private estudianteService: EstudiantesService) { }
   miFormulario = new FormGroup({
     codigo: new FormControl(null, Validators.required),
@@ -24,7 +24,7 @@ export class ListarPacienteComponent implements OnInit {
     this.estudianteService
       .getEstudiante(this.miFormulario.value.codigo)
       .subscribe((data: any) => {
-        console.log(data);
+        // console.log(data);
         var paciente = data.datosEstudianteCollection.datosBasicosEstudiante[0];
         this.nombre = paciente.nombre;
         this.codigo = paciente.codigo;
@@ -33,9 +33,17 @@ export class ListarPacienteComponent implements OnInit {
           .getProyecto(paciente.carrera)
           .subscribe((data: any) => {
             this.carrera = data.carrerasCollection.carrera[0].nombre;
-            console.log(data);
+            // console.log(data);
           });
+
       });
+    this.estudianteService.getInfoPorCodigo(this.miFormulario.value.codigo).subscribe((data) => {
+      this.terceroId = data[0].TerceroId.Id;
+      this.estudianteService.getInfoComplementaria(this.terceroId, 51).subscribe((data) => {
+        this.telefono = data[0].Dato;
+        // console.log(this.telefono);
+      });
+    });
   }
   ngOnInit() {
     this.buscarPaciente();

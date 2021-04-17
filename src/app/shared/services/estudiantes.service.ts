@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { InfoWindowManager } from '@agm/core';
 
 
 const opciones = {
@@ -12,8 +13,9 @@ const opciones = {
 const estudianteUrl = environment.ACADEMICA_JBPM_SERVICE;
 const infoUrl = environment.TERCEROS_SERVICE;
 const consultaInfo = 'datos_identificacion/?query=TipoDocumentoId:14,Numero:';
-const infoComplementaria = 'info_complementaria_tercero/?query=TerceroId.Id:';
-const genero = ',InfoComplementariaId.GrupoInfoComplementariaId.Id:6';
+const info= 'info_complementaria_tercero/?query=TerceroId.Id:';
+const grupoComplementaria = ',InfoComplementariaId.GrupoInfoComplementariaId.Id:';
+const infoComplementaria = ',InfoComplementariaId.Id:'
 @Injectable({
   providedIn: 'root'
 })
@@ -30,7 +32,10 @@ export class EstudiantesService {
   getInfoPorCodigo(codigo) {
     return this.http.get(infoUrl + consultaInfo + codigo, opciones);
   }
-  getInfoComplementaria(terceroId) {
-    return this.http.get(infoUrl + infoComplementaria + terceroId + genero, opciones);
+  getInfoGrupoComplementaria(terceroId, Id) {
+    return this.http.get(infoUrl + info+ terceroId + grupoComplementaria + Id, opciones);
+  }
+  getInfoComplementaria(terceroId, Id){
+    return this.http.get(infoUrl + info + terceroId + infoComplementaria + Id, opciones);
   }
 }

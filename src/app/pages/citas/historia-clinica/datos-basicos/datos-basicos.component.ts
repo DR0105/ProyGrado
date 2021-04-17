@@ -14,6 +14,7 @@ export class DatosBasicosComponent implements OnInit {
   carrera = "";
   estado = "";
   telefono = "";
+  direccion="";
   genero = "";
   codigo!: string;
   fechaNacimiento: Date;
@@ -54,9 +55,18 @@ export class DatosBasicosComponent implements OnInit {
       this.lugarNacimiento = data[0].TerceroId.LugarOrigen;
       this.terceroId = data[0].TerceroId.Id;
       // console.log(this.terceroId);
-      this.estudianteService.getInfoComplementaria(this.terceroId).subscribe((data) => {
+      this.estudianteService.getInfoGrupoComplementaria(this.terceroId,6).subscribe((data) => {
         this.genero = data[0].InfoComplementariaId.Nombre;
-      })
+        // console.log(this.genero);
+      });
+      this.estudianteService.getInfoComplementaria(this.terceroId,51).subscribe((data)=>{
+        this.telefono = data[0].Dato;
+        // console.log(this.telefono);
+      });
+      this.estudianteService.getInfoComplementaria(this.terceroId,54).subscribe((data)=>{
+        this.direccion = data[0].Dato;
+        // console.log(this.direccion);  
+      });
     });
 
     this.estudianteService
