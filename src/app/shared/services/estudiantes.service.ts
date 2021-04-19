@@ -11,9 +11,9 @@ const headers = {
   })
 }
 const estudianteUrl = environment.ACADEMICA_JBPM_SERVICE;
-const infoUrl = environment.TERCEROS_SERVICE;
+const infoUrl = environment.TERCEROS_CRUD_SERVICE;
 const consultaInfo = 'datos_identificacion/?query=TipoDocumentoId:14,Numero:';
-const info= 'info_complementaria_tercero/?query=TerceroId.Id:';
+const info = 'info_complementaria_tercero/?query=TerceroId.Id:';
 const grupoComplementaria = ',InfoComplementariaId.GrupoInfoComplementariaId.Id:';
 const infoComplementaria = ',InfoComplementariaId.Id:'
 @Injectable({
@@ -32,9 +32,9 @@ export class EstudiantesService {
     return this.http.get(infoUrl + consultaInfo + codigo, headers);
   }
   getInfoGrupoComplementaria(terceroId, Id) {
-    return this.http.get(infoUrl + info+ terceroId + grupoComplementaria + Id, headers);
+    return this.http.get(infoUrl + info + terceroId + grupoComplementaria + Id, headers);
   }
-  getInfoComplementaria(terceroId, Id){
+  getInfoComplementaria(terceroId, Id) {
     return this.http.get(infoUrl + info + terceroId + infoComplementaria + Id, headers);
   }
 }
