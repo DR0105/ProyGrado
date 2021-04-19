@@ -29,7 +29,7 @@ export class PagesComponent implements OnInit {
   roles: any;
 
   url_presupuesto  = environment.CLIENTE_PRESUPUESTO;
-  url_contabilidad = environment.CLIENTE_CONTABILIDAD;
+  // url_contabilidad = environment.CLIENTE_CONTABILIDAD;
   application_conf = 'presupuesto_kronos';
 
   constructor(
@@ -117,8 +117,8 @@ export class PagesComponent implements OnInit {
    *  @param urlNested
    */
   replaceUrlNested(urlNested) {
-    return urlNested.replace('${url_contabilidad}', this.url_contabilidad)
-                    .replace('${url_presupuesto}', this.url_presupuesto);
+    // return urlNested.replace('${url_contabilidad}', this.url_contabilidad)
+    return urlNested.replace('${url_presupuesto}', this.url_presupuesto);
   }
 
   /**
