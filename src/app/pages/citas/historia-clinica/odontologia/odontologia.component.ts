@@ -186,6 +186,7 @@ export class OdontologiaComponent implements OnInit {
       otra: this.odontologiaForm.get('otra').value,
       evolucion: this.odontologiaForm.get('evolucion').value,
     }
+   
     this.toastr.success('Ahora conecta todos los servicios xD', '¡Funciona!');
   }
 }
