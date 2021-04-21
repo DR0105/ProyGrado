@@ -1,12 +1,12 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ngx-odontograma',
-  templateUrl: './odontograma.component.html',
-  styleUrls: ['./odontograma.component.css']
+  selector: 'ngx-odontograma-linguales',
+  templateUrl: './odontograma-linguales.component.html',
+  styleUrls: ['./odontograma-linguales.component.css']
 })
-export class OdontogramaComponent implements OnInit {
-  @Input() id: string;
+export class OdontogramaLingualesComponent implements OnInit {
+
   color: number = 1;
    dientesArriba: any[] = [
     { diente: 0, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
@@ -19,12 +19,6 @@ export class OdontogramaComponent implements OnInit {
     { diente: 7, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
     { diente: 8, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
     { diente: 9, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
-    { diente: 10, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
-    { diente: 11, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
-    { diente: 12, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
-    { diente: 13, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
-    { diente: 14, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
-    { diente: 15, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
   ];
   dientesAbajo: any[] = [
     { diente: 0, classArriba: 'diente', classIzquierda: 'diente', classDerecha: 'diente', classCentro: 'diente', classAbajo: 'diente', ausente: 'invisible', rotado: 'invisible', desgaste: 'invisible', coronaDestruida: 'invisible', fracturado: 'invisible', erupcionado: 'invisible', obturado: 'invisible', obturadoResina: 'invisible', corona: 'invisible', endodoncia: 'invisible', implante: 'invisible' },
@@ -836,13 +830,9 @@ export class OdontogramaComponent implements OnInit {
     this.dientesAbajo[diente].obturadoResina = 'invisible';
 
   }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
-  constructor() {
-
+  ngOnInit() {
   }
 
 }
-
-
