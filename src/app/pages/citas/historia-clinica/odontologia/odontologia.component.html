@@ -692,7 +692,7 @@
   </div>
   <hr>
   <h6 class="titulo mt-2">Odontograma</h6>
-  <ngx-odontograma [id] = "'1'"></ngx-odontograma>
+  <ngx-odontograma [id]="'1'"></ngx-odontograma>
   <hr>
   <h6 class="titulo mt-2">Control de Placa</h6>
   <p class="titulo subtitulo">Vestibular</p>
@@ -718,7 +718,7 @@
   </div>
   <hr>
   <h6 class="titulo mt-2">Odontograma</h6>
-  <ngx-odontograma [id] = "'2'"></ngx-odontograma>
+  <ngx-odontograma [id]="'2'"></ngx-odontograma>
   <hr>
   <h6 class="titulo mt-2">Control de Placa</h6>
   <p class="titulo subtitulo">Vestibular infantil</p>
@@ -756,10 +756,12 @@
               <label class="col-form-label">Periapical</label>
             </div>
             <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="periapical1" class="form-control">
+              <label for="periapicalInicio" class="form-label">Inicio</label>
+              <input formControlName="periapicalInicio" class="form-control" type="file" id="periapicalInicio">
             </div>
             <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="periapical2" class="form-control">
+              <label for="periapicalFinal" class="form-label">Final</label>
+              <input formControlName="periapicalFinal" class="form-control" type="file" id="periapicalFinal">
             </div>
           </div>
         </div>
@@ -769,10 +771,12 @@
               <label class="col-form-label">Panorámica</label>
             </div>
             <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="panoramica1" class="form-control">
+              <label for="panoramicaInicio" class="form-label">Inicio</label>
+              <input formControlName="panoramicaInicio" class="form-control" type="file" id="panoramicaInicio">
             </div>
             <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="panoramica2" class="form-control">
+              <label for="panoramicaFinal" class="form-label">Final</label>
+              <input formControlName="panoramicaFinal" class="form-control" type="file" id="panoramicaFinal">
             </div>
           </div>
         </div>
@@ -782,28 +786,33 @@
               <label class="col-form-label">Otra</label>
             </div>
             <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="otra1" class="form-control">
+              <label for="otraInicio" class="form-label">Inicio</label>
+              <input formControlName="otraInicio" class="form-control" type="file" id="otraInicio">
             </div>
             <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="otra2" class="form-control">
-            </div>
-          </div>
-        </div>
-        <div class="col mt-2 mb-2">
-          <div class="row g-3 align-items-center">
-            <div class="col-2">
-              <label class="col-form-label">Exámenes de Laboratorio</label>
-            </div>
-            <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="examenesLaboratorioOdonto1" class="form-control">
-            </div>
-            <div class="col-auto me-2 ms-2">
-              <input type="text" formControlName="examenesLaboratorioOdonto2" class="form-control">
+              <label for="otraFinal" class="form-label">Final</label>
+              <input formControlName="otraFinal" class="form-control" type="file" id="otraFinal">
             </div>
           </div>
         </div>
       </div>
+      <div class="col mt-2 mb-2">
+        <div class="row g-3 align-items-center">
+          <div class="col-2">
+            <label class="col-form-label">Exámenes de Laboratorio</label>
+          </div>
+          <div class="col-auto me-2 ms-2">
+            <label for="examenesLaboratorioOdontoInicio" class="form-label">Inicio</label>
+            <input formControlName="examenesLaboratorioOdontoInicio" class="form-control" type="file" id="examenesLaboratorioOdontoInicio">
+          </div>
+          <div class="col-auto me-2 ms-2">
+            <label for="examenesLaboratorioOdontoFinal" class="form-label">Final</label>
+            <input formControlName="examenesLaboratorioOdontoFinal" class="form-control" type="file" id="examenesLaboratorioOdontoFinal">
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
   <div class=" row">
     <div class="col md-3 mb-3 me-4 mt-4">
