@@ -33,6 +33,7 @@ export class PsicologiaComponent implements OnInit {
     comportamientoDuranteConsulta: ['', Validators.required],
     hipotesis: [null, Validators.required],
     acuerdos: [null, Validators.required],
+    observacionesPsicologia: [null, Validators.required],
     evolucionPsico: this.fb.array([]),
   })
   pruebaEspecialista = {
@@ -84,6 +85,7 @@ export class PsicologiaComponent implements OnInit {
       comportamientoDuranteConsulta: this.psicologiaForm.get('comportamientoDuranteConsulta').value,
       hipotesis: this.psicologiaForm.get('hipotesis').value,
       acuerdos: this.psicologiaForm.get('acuerdos').value,
+      observaciones: this.psicologiaForm.get('observacionesPsicologia').value,
       evolucionPsico: this.psicologiaForm.get('evolucionPsico').value,
     }
     this.toastr.success('Ahora conecta todos los servicios xD', '¡Funciona!');

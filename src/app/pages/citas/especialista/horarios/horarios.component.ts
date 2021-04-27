@@ -48,10 +48,10 @@ export class HorariosComponent implements OnInit {
     slotLabelInterval: 30,
     snapDuration: '00:30:00',
     events: [
-      { title: 'Bryan Alejandro luis', date: '2021-04-14T10:30:00' },
-      { title: 'Diego Romero', date: '2021-04-15T11:00:00' },
-      { title: 'Diego Romero', date: '2021-04-15T15:00:00' },
-      { title: 'Bryan Alejandro luis', date: '2021-04-16T13:30:00' },
+      { title: 'Bryan Alejandro luis', date: '2021-04-21T10:30:00' },
+      { title: 'Diego Romero', date: '2021-04-22T11:00:00' },
+      { title: 'Diego Romero', date: '2021-04-22T15:00:00' },
+      { title: 'Bryan Alejandro luis', date: '2021-04-23T13:30:00' },
       { title: 'Andrés Castro', date: `${fechaHoy}` }
     ],
   };

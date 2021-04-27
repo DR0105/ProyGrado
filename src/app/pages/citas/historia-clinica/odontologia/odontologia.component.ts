@@ -83,6 +83,7 @@ export class OdontologiaComponent implements OnInit {
     coagulacion: [null, Validators.required],
     sangria: [null, Validators.required],
     otra: [null, Validators.required],
+    observacionesOdontologia: [null, Validators.required],
     evolucionOdonto: this.fb.array([]),
   });
   pruebaEspecialista = {
@@ -185,8 +186,9 @@ export class OdontologiaComponent implements OnInit {
       sangria: this.odontologiaForm.get('sangria').value,
       otra: this.odontologiaForm.get('otra').value,
       evolucion: this.odontologiaForm.get('evolucion').value,
+      observacionesFinales: this.odontologiaForm.get('observacionesOdontologia').value,
     }
-   
+
     this.toastr.success('Ahora conecta todos los servicios xD', '¡Funciona!');
   }
 }

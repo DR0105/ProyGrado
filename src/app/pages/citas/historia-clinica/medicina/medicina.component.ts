@@ -71,6 +71,7 @@ export class MedicinaComponent implements OnInit {
     analisis: this.fb.array([]),
     evolucion: this.fb.array([]),
     planDeManejo: [null, Validators.required],
+    observacionesMedicina: [null, Validators.required]
   });
   pruebaEspecialista = {
     nombre: 'NOMBRE1 APELLIDO1',
@@ -169,6 +170,7 @@ export class MedicinaComponent implements OnInit {
       id3: this.medicinaForm.get('id3').value,
       id4: this.medicinaForm.get('id4').value,
       analisis: this.medicinaForm.get('analisis').value,
+      observaciones: this.medicinaForm.get('observacionesMedicina').value,
       evolucion: this.medicinaForm.get('evolucion').value,
       planDeManejo: this.medicinaForm.get('planDeManejo').value,
     }

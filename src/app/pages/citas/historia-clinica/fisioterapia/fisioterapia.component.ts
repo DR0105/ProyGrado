@@ -13,6 +13,7 @@ export class FisioterapiaComponent implements OnInit {
     motivoConsultaFisio: [null, Validators.required],
     valoracion: [null, Validators.required],
     planDeManejoFisio: [null, Validators.required],
+    observacionesFisioterapia: [null, Validators.required],
     evolucionFisio: this.fb.array([]),
   })
   pruebaEspecialista = {
@@ -44,6 +45,7 @@ export class FisioterapiaComponent implements OnInit {
       valoracion: this.fisioterapiaForm.get('valoracion').value,
       planDeManejo: this.fisioterapiaForm.get('planDeManejoFisio').value,
       evolucion: this.fisioterapiaForm.get('evolucionFisio').value,
+      observaciones: this.fisioterapiaForm.get('observacionesFisioterapia').value,
 
     }
     this.toastr.success('Ahora conecta todos los servicios xD', '¡Funciona!');

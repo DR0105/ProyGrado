@@ -746,9 +746,9 @@
   <h6 class="titulo mt-2">Exámenes Complementarios</h6>
   <p class="titulo subtitulo">Examen Radiográfico</p>
   <div class="row mt-2">
-    <div class="col-md-3">
+    <div class="col-md-2">
     </div>
-    <div class="col me-4 ">
+    <div class="col me-">
       <div class="col-auto">
         <div class="col mt-2 mb-2">
           <div class="row g-3 align-items-center">
@@ -803,16 +803,18 @@
           </div>
           <div class="col-auto me-2 ms-2">
             <label for="examenesLaboratorioOdontoInicio" class="form-label">Inicio</label>
-            <input formControlName="examenesLaboratorioOdontoInicio" class="form-control" type="file" id="examenesLaboratorioOdontoInicio">
+            <input formControlName="examenesLaboratorioOdontoInicio" class="form-control" type="file"
+              id="examenesLaboratorioOdontoInicio">
           </div>
           <div class="col-auto me-2 ms-2">
             <label for="examenesLaboratorioOdontoFinal" class="form-label">Final</label>
-            <input formControlName="examenesLaboratorioOdontoFinal" class="form-control" type="file" id="examenesLaboratorioOdontoFinal">
+            <input formControlName="examenesLaboratorioOdontoFinal" class="form-control" type="file"
+              id="examenesLaboratorioOdontoFinal">
           </div>
         </div>
       </div>
     </div>
-  </div>
+
   </div>
   <div class=" row">
     <div class="col md-3 mb-3 me-4 mt-4">
@@ -875,6 +877,16 @@
           <button class="btn btn-outline-danger" type="button" (click)="borrarEvolucionOdonto(i)">
             Borrar
           </button>
+        </div>
+      </div>
+    </div>
+    <h6 class="titulo mt-4">Observaciones</h6>
+    <div class="row mt-4">
+      <div class="col md-12 me-4">
+        <div class="form-floating">
+          <textarea class="form-control textArea-big" formControlName="observacionesOdontologia" placeholder="Observaciones"
+            id="observaciones"></textarea>
+          <label for="observacionesOdontologia"> Observaciones</label>
         </div>
       </div>
     </div>
